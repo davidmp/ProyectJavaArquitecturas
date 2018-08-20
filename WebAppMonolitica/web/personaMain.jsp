@@ -41,6 +41,7 @@
                 <td>nombre</td>
                 <td>apellidos</td>
                 <td>dni</td>
+                <td>Opciones</td>
             </tr>            
         <%
         while (rs.next()) {
@@ -52,6 +53,7 @@
                         <td><%=rs.getString("nombre") %></td>
                         <td><%=rs.getString("apellidos") %></td>
                         <td><%=rs.getString("dni") %></td>
+                        <td><a href="personaMain.jsp?idpersona=<%=rs.getInt("idPersona") %>&opc=D" >Eliminar</a></td>
                     </tr>
                          
         
