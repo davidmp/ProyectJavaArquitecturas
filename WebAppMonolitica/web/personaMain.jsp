@@ -4,7 +4,7 @@
     Author     : LAB_SOFTWARE-DTI
 --%>
 
-<%@page import="java.sql.*"%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,25 +12,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%@include file="conexion.jsp" %>
     </head>
     <body>
         <h1>Hello World!</h1>
         
+
+        
         <%
-        Connection conexion=null;
-        try{
-        Class.forName("com.mysql.jdbc.Driver");
-        conexion=DriverManager.getConnection
-        ("jdbc:mysql://127.0.0.1/academico","root","");
-        out.println("Conexión realizada con éxito a: "+conexion.getCatalog());
+        String opc=request.getParameter("opc")==null?"":request.getParameter("opc");
         
-        } catch(SQLException ex)
-        { %>
-        <%="Se produjo una excepción durante la conexión:"+ex%>
-        <%} catch(Exception ex){ %>
-        <%="Se produjo una excepción:"+ex%>
-        
-        <%}%>   
+        if(opc.equals("D")){
+        int idpersona=Integer.parseInt(request.getParameter("idpersona")==null?"0":request.getParameter("idpersona"));
+        PreparedStatement psx=conexion.prepareStatement("delete from persona where idPersona='"+idpersona+"'");
+        psx.executeUpdate();
+        }
+
+        %>
         
         <%
         PreparedStatement ps=conexion.prepareStatement("SELECT * FROM persona");
