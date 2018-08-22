@@ -7,11 +7,14 @@ package pe.edu.upeu.webappupeumvc.controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.edu.upeu.webappupeumvc.dao.PersonaDAO;
+import pe.edu.upeu.webappupeumvc.modelo.Persona;
 
 /**
  *
@@ -32,15 +35,25 @@ public class PersonaControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        PersonaDAO dao;
+        
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            dao=new PersonaDAO();
+            List<Persona> lista=dao.listarPersona();
+             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet PersonaControl</title>");            
             out.println("</head>");
             out.println("<body>");
+            
             out.println("<h1>David Servlet PersonaControl at " + request.getContextPath() + "</h1>");
+            for (Persona pers: lista) {
+                out.println("Nombre: "+pers.getNombre()+"<br/>");
+            }
+            
             out.println("</body>");
             out.println("</html>");
         }

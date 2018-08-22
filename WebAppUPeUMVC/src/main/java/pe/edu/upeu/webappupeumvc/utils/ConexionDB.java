@@ -38,9 +38,6 @@ public class ConexionDB {
         }
     }
     
-    public static void main(String[] args) {
-        ConexionDB cx=new ConexionDB();
-        cx.getConexionDB();
-    }
+
     
 }
