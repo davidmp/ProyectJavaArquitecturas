@@ -37,25 +37,24 @@ public class PersonaControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         PersonaDAO dao;
-        
-        try (PrintWriter out = response.getWriter()) {
+        int opt=0;
+        try (PrintWriter out = response.getWriter()) {          
+        opt=Integer.parseInt(request.getParameter("opt")==null?"0": request.getParameter("opt"));
+        switch(opt){
+            case 1: 
             dao=new PersonaDAO();
-            List<Persona> lista=dao.listarPersona();
-             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet PersonaControl</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            
-            out.println("<h1>David Servlet PersonaControl at " + request.getContextPath() + "</h1>");
-            for (Persona pers: lista) {
-                out.println("Nombre: "+pers.getNombre()+"<br/>");
-            }
-            
-            out.println("</body>");
-            out.println("</html>");
+            List<Persona> lista=dao.listarPersona();                
+            request.getSession().setAttribute("ListaPersona", lista);
+            response.sendRedirect("modulos/persona/mainPersona.jsp");
+                break;
+            case 2: {
+                System.out.println("Holasssssssssss");  
+            response.sendRedirect("modulos/persona/mainPersona.jsp");
+            } break;
+            case 3: {} break;
+            case 4: {} break;
+            default:break;
+        }              
         }
     }
 
