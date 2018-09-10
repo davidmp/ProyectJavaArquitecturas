@@ -6,8 +6,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title><tiles:getAsString name="title" /></title>
-    <link rel='stylesheet' href='resources/bootstrap/4.1.2/css/bootstrap.min.css'>    
-    <link href="resources/style/app.css" rel="stylesheet">
+        <link rel='stylesheet' href='resources/bootstrap/4.1.2/css/bootstrap.min.css'>
+        <script type='text/javascript' src='resources/bootstrap/4.1.2/js/bootstrap.min.js'></script>
+        
+        <link rel="stylesheet" href="resources/jquery/jquery-ui.css">        
+        <script type='text/javascript' src='webjars/jquery/3.3.1/dist/jquery.min.js'></script>   
+        <link href="resources/style/app.css" rel="stylesheet">
 </head>  
 <body>
         <header id="header">

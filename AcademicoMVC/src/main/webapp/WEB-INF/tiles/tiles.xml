@@ -17,6 +17,15 @@
    <definition name="*" extends="base-definition">
        <put-attribute name="body" value="/WEB-INF/upeu/modulos/{1}.jsp" />  
    </definition>
+   
+   <definition name="*/*" extends="base-definition">
+       <put-attribute name="title" value="Academico Nivel 2" />  
+       <put-attribute name="body" value="/WEB-INF/upeu/modulos/{1}/{2}.jsp" />  
+   </definition>
+   <definition name="*/*/*" extends="base-definition">
+       <put-attribute name="title" value="Academico Nivel 3" />  
+       <put-attribute name="body" value="/WEB-INF/upeu/modulos/{1}/{2}/{3}.jsp" />  
+   </definition>
 
   
 </tiles-definitions>
