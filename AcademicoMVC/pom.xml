@@ -86,7 +86,19 @@
                 <version>3.3.1</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.webjars.bower/materialize -->
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>materialize</artifactId>
+                <version>1.0.0-rc.2</version>
+            </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.webjars/material-design-icons -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>material-design-icons</artifactId>
+                <version>2.2.0</version>
+            </dependency>
 
 
                 

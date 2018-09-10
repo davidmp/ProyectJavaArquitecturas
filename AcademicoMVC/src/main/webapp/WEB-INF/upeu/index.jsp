@@ -17,6 +17,12 @@
         <script type='text/javascript' src='webjars/jquery/3.3.1/dist/jquery.min.js'></script>
         
         
+<!--Import Google Icon Font-->
+      <link href="resources/materializer/material.css" rel="stylesheet">        
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="webjars/materialize/1.0.0-rc.2/dist/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+        <script src="webjars/materialize/1.0.0-rc.2/dist/js/materialize.min.js"></script>                
 
       
 <!--        <link rel='stylesheet' href='webjars/bootstrap/4.1.2/css/bootstrap.min.css'>
@@ -39,7 +45,11 @@
 
         <input class="ui-button ui-widget ui-corner-all" type="submit" value="A submit button">
 
-        <a class="ui-button ui-widget ui-corner-all" href="#">An anchor</a>        
+        <a class="ui-button ui-widget ui-corner-all" href="#">An anchor</a>  
+        
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>        
         
     </body>
 </html>
