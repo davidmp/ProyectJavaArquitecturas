@@ -25,7 +25,7 @@ public ModelAndView inicio(){
 
 @RequestMapping(value = {"/pers" }, method = RequestMethod.GET)    
 public ModelAndView mainPersona(){    
-    return new ModelAndView("modulos/persona/mainPersona");
+    return new ModelAndView("persona/mainPersona");
 }
     
 }

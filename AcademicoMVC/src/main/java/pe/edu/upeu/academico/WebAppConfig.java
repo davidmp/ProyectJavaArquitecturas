@@ -22,6 +22,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesView;
 
 @Configuration
 @ComponentScan("pe.edu.upeu.academico")
@@ -29,11 +31,25 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 public class WebAppConfig extends WebMvcConfigurerAdapter{
  
-	
+
+        @Bean
+        public UrlBasedViewResolver tilesViewResolver(){
+            UrlBasedViewResolver tilesViewResolver=new UrlBasedViewResolver();
+            tilesViewResolver.setViewClass(TilesView.class);
+            return tilesViewResolver;
+        }
+        
+        @Bean
+        public TilesConfigurer tilesConfigurer(){
+            TilesConfigurer tconf=new TilesConfigurer();
+            tconf.setDefinitions(new String[]{"/WEB-INF/tiles/tiles.xml"} );
+            return tconf;
+        }
+    
 	@Bean
 	public UrlBasedViewResolver setupViewResolver() {
 		UrlBasedViewResolver resolver = new UrlBasedViewResolver();
-		resolver.setPrefix("/WEB-INF/upeu/");
+		resolver.setPrefix("/WEB-INF/upeu/modulos/");
 		resolver.setSuffix(".jsp");
 		resolver.setViewClass(JstlView.class);
 		return resolver;
