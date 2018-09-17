@@ -21,6 +21,7 @@
     <i class="material-icons right">send</i>
   </button>       
   <br/>
+  Mensaje: 
   ${message}
    <br/>
    
