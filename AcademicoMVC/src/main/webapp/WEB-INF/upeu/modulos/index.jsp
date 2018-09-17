@@ -1,4 +1,4 @@
-
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
     <script>
     $( function() {
       $( ".widget input[type=submit], .widget a, .widget button" ).button();
@@ -19,4 +19,9 @@
         
   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
-  </button>        
+  </button>       
+  <br/>
+  ${message}
+   <br/>
+   
+   <p> <spring:message code="welcome.greeting" arguments="${startMeeting}" /> </p> 
