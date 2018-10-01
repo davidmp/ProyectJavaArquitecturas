@@ -25,6 +25,12 @@
 	</properties>
 
 	<dependencies>
+            
+            <dependency>
+                <groupId>pe.edu.upeu</groupId>
+                <artifactId>AcademicoMVC-Servicio</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -40,14 +46,85 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+                
+<!--                Agregado                -->
+		<!-- CGLIB is required to process @Configuration classes -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.2.6</version>
+		</dependency>		
+                
+                <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.0</version>
+			<scope>provided</scope>
+		</dependency>                
+                <dependency>
+                      <groupId>javax.servlet</groupId>
+                      <artifactId>jstl</artifactId>
+                </dependency>                 
+                <!--      fin       Agregado                -->                
+            <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>bootstrap</artifactId>
+                <version>4.1.2</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>jquery</artifactId>
+                <version>3.3.1</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.webjars.bower/materialize -->
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>materialize</artifactId>
+                <version>1.0.0-rc.2</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.webjars/material-design-icons -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>material-design-icons</artifactId>
+                <version>2.2.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
+            <dependency>
+                <groupId>org.apache.tiles</groupId>
+                <artifactId>tiles-jsp</artifactId>
+                <version>3.0.8</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+            <dependency>
+                <groupId>org.apache.tiles</groupId>
+                <artifactId>tiles-core</artifactId>
+                <version>3.0.8</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-digester/commons-digester -->
+            <dependency>
+                <groupId>commons-digester</groupId>
+                <artifactId>commons-digester</artifactId>
+                <version>2.0</version>
+            </dependency>                
+                
 	</dependencies>
 
 	<build>
 		<plugins>
+                        
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>                        
 		</plugins>
 	</build>
 
