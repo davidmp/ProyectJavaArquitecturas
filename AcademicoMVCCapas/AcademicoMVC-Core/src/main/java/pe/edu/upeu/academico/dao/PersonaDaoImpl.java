@@ -21,6 +21,15 @@ public class PersonaDaoImpl extends SysDataAccess<Integer, Persona> implements P
     
     @Override
     public List<Persona> listarEntidad(){ return getListAll();}    
+        
+    
+    @Override
+    public List<Persona> listarEntidadDato(String dato){
+        return (List<Persona>)sessionFactory.getCurrentSession()
+                .createQuery("SELECT p from Persona p WHERE p.nombre LIKE ? ")
+                .setString(0, "%"+dato+"%")
+                .list();                
+                }
     
     @Override
     public Persona buscarEntidadId(int id){ return getById(id);}

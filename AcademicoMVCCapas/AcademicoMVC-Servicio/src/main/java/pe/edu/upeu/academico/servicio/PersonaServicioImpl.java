@@ -26,6 +26,8 @@ public class PersonaServicioImpl implements PersonaServicioI{
     @Override
     public List<Persona> listarEntidad(){ return dao.listarEntidad();}
     @Override
+    public List<Persona> listarEntidadDato(String dato){ return dao.listarEntidadDato(dato);}
+    @Override
     public Persona buscarEntidadId(int id){return dao.buscarEntidadId(id);}
     @Override
     public void guardarEntidad(Persona persona){dao.guardarEntidad(persona);}

@@ -31,6 +31,22 @@
    Cantidad Registros: 
     <br/>
     
+    <form action="${pageContext.request.contextPath}/buscar" method="POST">
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td> <input type="text" class="form-control"  id="dato" name="dato"/></td>
+                    <td><input type="submit" value="Buscar" class="btn btn-primary"/>  </td>                                                
+                </tr>
+            </table> 
+        </div>
+        </div>
+
+        
+    </form>
+    <br/>
     <c:if test="${!empty ListaPersona}">
     <table class="table">
       <thead class="thead-dark">
@@ -39,6 +55,7 @@
           <th scope="col">Nombre</th>
           <th scope="col">Apellidos</th>
           <th scope="col">DNI</th>
+          <th scope="col">Opciones</th>
         </tr>
       </thead>
       <tbody>
@@ -48,6 +65,7 @@
                   <td>${dato.nombre}</td>
                   <td>${dato.apellidos}</td>
                   <td>${dato.dni}</td>
+                  <td><a href="${pageContext.request.contextPath}/elim?id=${dato.idPersona}">E</a></td>
                 </tr>
         </c:forEach> 
       </tbody>

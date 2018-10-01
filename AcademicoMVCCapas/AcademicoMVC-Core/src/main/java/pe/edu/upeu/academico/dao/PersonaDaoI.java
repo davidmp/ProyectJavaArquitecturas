@@ -14,6 +14,7 @@ import pe.edu.upeu.academico.modelo.Persona;
  */
 public interface PersonaDaoI {
     public List<Persona> listarEntidad();
+    public List<Persona> listarEntidadDato(String dato);
     public Persona buscarEntidadId(int id);
     public void guardarEntidad(Persona persona);
     public void eliminarEntidad(int id);
