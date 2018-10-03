@@ -39,6 +39,7 @@
                     <td>Nombre:</td>
                     <td> <input type="text" class="form-control"  id="dato" name="dato"/></td>
                     <td><input type="submit" value="Buscar" class="btn btn-primary"/>  </td>                                                
+                    <td><input type="button" value="Nuevo" class="btn btn-info"/>  </td>                                                
                 </tr>
             </table> 
         </div>
