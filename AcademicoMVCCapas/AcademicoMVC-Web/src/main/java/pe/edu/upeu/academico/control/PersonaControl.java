@@ -93,9 +93,17 @@ return new ModelAndView("persona/mainPersona");
 }
 
 @RequestMapping(value = "/formPersona", method = RequestMethod.GET)
-public ModelAndView irFormulario(@ModelAttribute("modeloPersona")Persona persona, BindingResult result){
+public ModelAndView irFormulario(@ModelAttribute("modeloPersona")Persona persona,
+        BindingResult result){
     
 return new ModelAndView("persona/formPersona");
+}
+
+@RequestMapping(value = "/guardarPersona", method = RequestMethod.POST)
+public ModelAndView guardarEntidad(@ModelAttribute("modeloPersona")Persona persona,
+        BindingResult result){
+        personaServicioI.guardarEntidad(persona);
+    return new ModelAndView(new RedirectView("/"));
 }
 
 }
