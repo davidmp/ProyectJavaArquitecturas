@@ -12,7 +12,7 @@
     <br/>
     <a href="/pers" class="btn btn-warning">Ir Persona</a>
 
-    <button class="ui-button ui-widget ui-corner-all">A button element</button>
+    <button class="ui-button ui-widget ui-corner-all" >A button element</button>
 
     <input class="ui-button ui-widget ui-corner-all" type="submit" value="A submit button">
 

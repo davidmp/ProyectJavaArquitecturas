@@ -23,7 +23,7 @@
             <tiles:insertAttribute name="menu" />
         </section>
              
-        <section id="site-content">
+        <section id="site-content" style="padding: 2em">
             <tiles:insertAttribute name="body" />
         </section>
          
