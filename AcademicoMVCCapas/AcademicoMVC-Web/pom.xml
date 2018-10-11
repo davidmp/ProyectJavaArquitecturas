@@ -66,32 +66,30 @@
                       <artifactId>jstl</artifactId>
                 </dependency>                 
                 <!--      fin       Agregado                -->                
-            <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>bootstrap</artifactId>
-                <version>4.1.2</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
-            <dependency>
-                <groupId>org.webjars.bower</groupId>
-                <artifactId>jquery</artifactId>
-                <version>3.3.1</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.webjars.bower/materialize -->
-            <dependency>
-                <groupId>org.webjars.bower</groupId>
-                <artifactId>materialize</artifactId>
-                <version>1.0.0-rc.2</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/org.webjars/material-design-icons -->
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>material-design-icons</artifactId>
-                <version>2.2.0</version>
-            </dependency>
+                <!-- https://mvnrepository.com/artifact/org.webjars/AdminLTE -->
+                <dependency>
+                    <groupId>org.webjars</groupId>
+                    <artifactId>AdminLTE</artifactId>
+                    <version>2.4.2</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.webjars/font-awesome -->
+                <dependency>
+                    <groupId>org.webjars</groupId>
+                    <artifactId>font-awesome</artifactId>
+                    <version>5.2.0</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.webjars.bower/ionicons -->
+                <dependency>
+                    <groupId>org.webjars.bower</groupId>
+                    <artifactId>ionicons</artifactId>
+                    <version>2.0.1</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+                <dependency>
+                    <groupId>org.webjars</groupId>
+                    <artifactId>bootstrap</artifactId>
+                    <version>3.3.7</version>
+                </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
             <dependency>
