@@ -15,6 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.0.M4</version>
+<!--                <version>2.0.4.RELEASE</version>-->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -93,6 +94,16 @@
                                 <artifactId>rewrite-servlet</artifactId>
                                 <version>2.0.12.Final</version>
                 </dependency>
+                <dependency>
+                    <groupId>com.sun.faces</groupId>
+                    <artifactId>jsf-api</artifactId>
+                    <version>2.2.14</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.sun.faces</groupId>
+                    <artifactId>jsf-impl</artifactId>
+                    <version>2.2.14</version>                    
+                </dependency>
 		<!-- Repository: http://repository.primefaces.org/ -->
 		<!-- include a custom theme jar -->
 <!--		<dependency>
@@ -149,6 +160,13 @@
 	</build>
 
 	<repositories>
+                <repository>
+                    <id>prime-repo</id>
+                    <name>PrimeFaces Maven Repository</name>
+                    <url>http://repository.primefaces.org</url>
+                    <layout>default</layout>
+                </repository> 
+                           
                 <repository>
                     <snapshots/>
                     <id>snapshots</id>

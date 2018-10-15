@@ -33,7 +33,21 @@ and open the template in the editor.
 
                         <!-- Your Page Content Here -->
                         <p:editor/>
-                           
+
+                        <h3 style="margin-top:0">Plain Menu</h3>
+                        <p:menu>
+                            <p:submenu label="Ajax">
+                                <p:menuitem value="Save"  update="messages" icon="ui-icon-disk" />
+                                <p:menuitem value="Update"  update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+                            </p:submenu>
+                            <p:submenu label="Non-Ajax">
+                                <p:menuitem value="Delete"  update="messages" ajax="false" icon="ui-icon-close"/>
+                            </p:submenu>
+                            <p:submenu label="Navigations">
+                                <p:menuitem value="External" url="http://www.primefaces.org" icon="ui-icon-home"/>
+                                <p:menuitem value="Internal" icon="ui-icon-star"/>
+                            </p:submenu>
+                        </p:menu>                        
                       </section><!-- /.content -->
                     </div><!-- /.content-wrapper -->
     		</ui:define>    		

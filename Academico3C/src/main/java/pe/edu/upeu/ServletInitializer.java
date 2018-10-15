@@ -90,22 +90,22 @@ public class ServletInitializer extends SpringBootServletInitializer {
 //        }	
         
       
-        @Bean
-        public ServletWebServerFactory servletContainer() {
-            TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
-                @Override
-                protected void postProcessContext(Context context) {
-
-                    context.addWelcomeFile("index.jsf");
-
-                    context.addMimeMapping("eot", "application/vnd.ms-fontobject");
-                    context.addMimeMapping("ttf", "application/x-font-ttf");
-                    context.addMimeMapping("woff", "application/x-font-woff");                    
-
-                }
-            };            
-            return tomcat;
-        }
+//        @Bean
+//        public ServletWebServerFactory servletContainer() {
+//            TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
+//                @Override
+//                protected void postProcessContext(Context context) {
+//
+//                    context.addWelcomeFile("index.jsf");
+//
+//                    context.addMimeMapping("eot", "application/vnd.ms-fontobject");
+//                    context.addMimeMapping("ttf", "application/x-font-ttf");
+//                    context.addMimeMapping("woff", "application/x-font-woff");                    
+//
+//                }
+//            };            
+//            return tomcat;
+//        }
 
   
 
