@@ -27,13 +27,13 @@
             <tiles:insertAttribute name="header" />
         </header>
      
-        <section id="sidemenu" class="main-sidebar">
+        <aside id="sidemenu" class="main-sidebar">
             <tiles:insertAttribute name="menu" />
-        </section>
+        </aside>
              
-        <section id="site-content" >
+<!--        <section id="site-content" >-->
             <tiles:insertAttribute name="body" />
-        </section>
+<!--        </section>-->
          
         <footer id="footer" class="main-footer">
             <tiles:insertAttribute name="footer" />
