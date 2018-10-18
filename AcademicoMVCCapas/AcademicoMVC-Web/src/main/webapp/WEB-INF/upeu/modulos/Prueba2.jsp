@@ -1,4 +1,7 @@
+	
 
+<script src='/webjars/AdminLTE/2.4.2/bower_components/jquery/dist/jquery.min.js'></script>
+<link rel="stylesheet" href="/resources/css/jquery.dataTables.min.css">
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -14,7 +17,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="employeesTable" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>Rendering engine</th>
@@ -451,16 +454,31 @@
     </section>
 
 </div>
-<script>
+<script>//
   $(function () {
     //$('#example1').DataTable()
-    $('#example2').DataTable({
+    $('#employeesTable').DataTable({
       'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
+      'lengthChange': true,
+      'searching'   : true,
       'ordering'    : true,
       'info'        : true,
       'autoWidth'   : false
     });
   });
+//$(document).ready( function () {
+//	 var table = $('#employeesTable').DataTable({
+//			"sAjaxSource": "/employees",
+//			"sAjaxDataProp": "",
+//			"order": [[ 0, "asc" ]],
+//			"aoColumns": [
+//			    { "mData": "id"},
+//		      { "mData": "name" },
+//				  { "mData": "lastName" },
+//				  { "mData": "email" },
+//				  { "mData": "phone" },
+//				  { "mData": "active" }
+//			]
+//	 });
+//});
 </script>
