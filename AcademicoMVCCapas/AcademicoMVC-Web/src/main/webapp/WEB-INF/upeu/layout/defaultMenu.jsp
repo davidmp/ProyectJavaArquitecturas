@@ -33,9 +33,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-                    <li class="active"><a href="${pageContext.request.contextPath}/"><i class="fa fa-circle-o"></i> Home</a></li>
-                    <li ><a href="${pageContext.request.contextPath}/products"><i class="fa fa-circle-o"></i> Products</a></li>
-                    <li ><a href="${pageContext.request.contextPath}/contactus"><i class="fa fa-circle-o"></i> Contact Us</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/"><i class="fa fa-circle-o"></i> Home</a></li>                                        
                     <li ><a href="${pageContext.request.contextPath}/pru1"><i class="fa fa-circle-o"></i> Prueba1</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pru2"><i class="fa fa-circle-o"></i> Prueba2</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pers"><i class="fa fa-circle-o"></i> Persona Main</a></li>
