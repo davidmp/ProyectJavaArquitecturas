@@ -23,14 +23,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
                 <jsf-mojarra.version>2.2.11</jsf-mojarra.version>
-		<primefaces.version>6.0</primefaces.version>
-		<primefaces-extensions.version>6.0.0</primefaces-extensions.version>                  
+		<primefaces.version>6.2</primefaces.version>
+		<primefaces-extensions.version>6.2.8</primefaces-extensions.version>                  
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>                       
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,7 +45,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-		</dependency>
+		</dependency>               
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -66,12 +66,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+                
                 <dependency>
                     <groupId>org.ocpsoft.rewrite</groupId>
                     <artifactId>rewrite-servlet</artifactId>
                     <version>2.0.12.Final</version>
                 </dependency>
-                <dependency>
+<!--                <dependency>
                     <groupId>com.sun.faces</groupId>
                     <artifactId>jsf-api</artifactId>
                     <version>2.2.14</version>
@@ -80,12 +81,13 @@
                     <groupId>com.sun.faces</groupId>
                     <artifactId>jsf-impl</artifactId>
                     <version>2.2.14</version>                    
-                </dependency>
+                </dependency>-->
+               
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
 			<version>${jsf-mojarra.version}</version>
-		</dependency>  
+		</dependency>
                 <dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
@@ -102,12 +104,51 @@
                     <artifactId>all-themes</artifactId>
                     <version>1.0.10</version>
                 </dependency> 
+                
+                <dependency>
+                   <groupId>xmlbeans</groupId>
+                   <artifactId>xmlbeans</artifactId>
+                   <version>2.3.0</version>
+                </dependency>
+                <dependency>
+                   <groupId>com.lowagie</groupId>
+                   <artifactId>itext</artifactId>
+                   <version>4.2.2</version>
+                </dependency>                
+                <dependency>
+                  <groupId>org.apache.poi</groupId>
+                  <artifactId>poi</artifactId>
+                  <version>4.0.0</version>
+                </dependency> 
+                               
                 <dependency>
                     <groupId>org.webjars</groupId>
                     <artifactId>AdminLTE</artifactId>
                     <version>2.4.3</version>
-                </dependency>                
-                                                                                                                  
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.webjars/font-awesome -->
+                <dependency>
+                    <groupId>org.webjars</groupId>
+                    <artifactId>font-awesome</artifactId>
+                    <version>5.2.0</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.webjars.bower/ionicons -->
+                <dependency>
+                    <groupId>org.webjars.bower</groupId>
+                    <artifactId>ionicons</artifactId>
+                    <version>2.0.1</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+                <dependency>
+                    <groupId>org.webjars</groupId>
+                    <artifactId>bootstrap</artifactId>
+                    <version>3.3.7</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.webflow</groupId>
+                    <artifactId>spring-faces</artifactId>
+                    <version>2.5.0.RELEASE</version>                 
+                </dependency>
 	</dependencies>
 
 	<build>

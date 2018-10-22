@@ -5,30 +5,26 @@ import javax.faces.application.ProjectStage;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import org.primefaces.util.Constants;
-import javax.faces.webapp.FacesServlet;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+//import org.springframework.faces.mvc.JsfView;
+//import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 
 @Configuration
-@EnableAutoConfiguration
+@EnableAutoConfiguration //(exclude = { JpaConfig.class })
 @ComponentScan
 @SpringBootApplication
-@EnableTransactionManagement
-@EnableJpaRepositories
 public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
@@ -48,7 +44,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 		return new ServletContextInitializer() {
 			@Override
 			public void onStartup(ServletContext sc) throws ServletException {
-				sc.setInitParameter(Constants.ContextParams.THEME, "sunny");
+				sc.setInitParameter(Constants.ContextParams.THEME, "start");
 				sc.setInitParameter(Constants.ContextParams.FONT_AWESOME, "true");
 				sc.setInitParameter(ProjectStage.PROJECT_STAGE_PARAM_NAME, ProjectStage.Development.name());
                                 
@@ -56,13 +52,16 @@ public class ServletInitializer extends SpringBootServletInitializer {
 		};
 	}
 
-        @Bean
-        public ServletRegistrationBean servletRegistrationBean() {
-            FacesServlet servlet = new FacesServlet();
-            ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(servlet, "*.jsf");
-            return servletRegistrationBean;
-        }
-        
+//	@Bean
+//	public UrlBasedViewResolver setupViewResolver() {
+//		UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+//		resolver.setViewClass(JsfView.class);
+//                resolver.setPrefix("/WEB-INF/modulos/");
+//		resolver.setSuffix(".xhtml");
+//		
+//		return resolver;
+//	}
+                
 	@Bean
 	public MessageSource messageSourceOther() {
 	    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();

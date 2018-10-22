@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:body>
+    	
+    	<ui:composition template="/template/common/commonLayout.xhtml">    	
+    		<ui:define name="content">
+    			            <!-- Content Wrapper. Contains page content -->
+                    <div class="content-wrapper">
+                      <!-- Content Header (Page header) -->
+                      <section class="content-header">
+                        <h1>
+                          Page Header
+                          <small>Optional description</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                          <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                          <li class="active">Here</li>
+                        </ol>
+                      </section>
+
+                      <!-- Main content -->
+                      <section class="content">
+
+                        <div class="box box-primary">
+                                          <div class="box-header with-border">
+                                            <h3 class="box-title">Formulario de Registro</h3>
+                                          </div>
+                                <div class="box-body">
+
+                                    <h:form id="form">
+                                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                                        <p:growl for="errors" showDetail="true" autoUpdate="true"/>
+                                                <div class="form-group">
+                                                        <label class="col-sm-2 control-label"> Nombre :</label>                                                        
+                                                        <p:inputText id="name" class="col-sm-10" value="#{personaController.persona.nombre}"   requiredMessage="" />                                                        
+                                                </div>
+                                                <div class="form-group">
+                                                        <label class="col-sm-2 control-label"> Apellidos :</label>
+                                                        <p:inputText id="email" class="col-sm-10" value="#{personaController.persona.apellidos}" requiredMessage="" />
+                                                </div>
+                                                <div class="form-group">
+                                                        <label class="col-sm-2 control-label"> DNI :</label>
+                                                        <p:inputText id="datepicker" class="col-sm-10" value="#{personaController.persona.dni}" />
+                                                </div>
+                                                <div class="form-group">
+                                                        <label class="col-sm-2 control-label"> Telefono:</label>
+                                                        <p:inputText id="datepicker1" class="col-sm-10" value="#{personaController.persona.telefono}" />
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <h:outputLabel rendered="#{personaController.persona.dni != null}"> Reserva Realizada :</h:outputLabel>
+                                                        <h:outputText id="reservaRealizada" value="#{personaController.persona.dni}" rendered="#{personaController.persona.dni != null}" />
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <p:commandButton value="Reservar" id="reservar" update="form" actionListener="#{personaController.submit}" ajax="false" />
+                                                </div>
+
+                                                <p:separator />
+
+                                                <div class="form-group">
+                                                        <p:commandButton value="Reset" id="reset" update="form" actionListener="#{personaController.reset}" />
+                                                </div>
+                                        </h:form>
+                                </div>
+
+                        </div>
+                           
+            <div class="box box-primary">
+		
+                <h:form>
+<!--			<img src="images/real1.jpg" alt="" class="img-responsive" />-->
+                <p:dataTable id="booklist"  value="#{personaController.listPersona}" var="bk"                  
+                 rows="10" paginator="true"
+                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                 rowsPerPageTemplate="5,10,15">
+                         
+                    <p:column  filterBy="#{bk.nombre}" sortBy="#{bk.nombre}"  >
+                        <f:facet name="header">
+                            <h:outputText value="Nombre"/>
+                        </f:facet>
+                        <h:outputText value="#{bk.nombre}"/>
+                    </p:column>
+                    <p:column filterBy="#{bk.apellidos}" sortBy="#{bk.apellidos}" >
+                        <f:facet name="header">
+                            <h:outputText value="Apellidos"/>
+                        </f:facet>
+                        <h:outputText value="#{bk.apellidos}"/>
+                    </p:column>
+                    <p:column filterBy="#{bk.dni}" sortBy="#{bk.dni}" >
+                        <f:facet name="header">
+                            <h:outputText value="DNI"/>
+                        </f:facet>
+                        <h:outputText value="#{bk.dni}"/>
+                    </p:column>
+                    <p:column filterBy="#{bk.telefono}" sortBy="#{bk.telefono}" >
+                        <f:facet name="header">
+                            <h:outputText value="Telefono"/>
+                        </f:facet>
+                        <h:outputText value="#{bk.telefono}"/>
+                    </p:column>
+                </p:dataTable>
+
+                    <h3>Export Page Data Only</h3>
+                    <h:commandLink>
+                        <p:graphicImage url="/resources/images/excel.png" />
+                        <p:dataExporter type="xls" target="booklist" fileName="cars" pageOnly="true"/>
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <p:graphicImage url="/resources/images/pdf.png" />
+                        <p:dataExporter type="pdf" target="booklist" fileName="cars" pageOnly="true" />
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <p:graphicImage url="/resources/images/csv.png" />
+                        <p:dataExporter type="csv" target="booklist" fileName="cars" pageOnly="true" />
+                    </h:commandLink>
+
+                    <h:commandLink>
+                        <p:graphicImage url="/resources/images/xml.png" />
+                        <p:dataExporter type="xml" target="booklist" fileName="cars" pageOnly="true" />
+                    </h:commandLink>                
+                </h:form>
+		</div>                          
+                          
+                      </section><!-- /.content -->
+                    </div><!-- /.content-wrapper -->
+    		</ui:define>    		
+    	</ui:composition>
+    	
+    </h:body>
+
+</html>
