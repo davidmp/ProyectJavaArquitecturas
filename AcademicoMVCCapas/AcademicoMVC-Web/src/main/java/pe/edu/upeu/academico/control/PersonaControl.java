@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -94,8 +95,8 @@ return new ModelAndView("persona/mainPersona");
 
 @RequestMapping(value = "/formPersona", method = RequestMethod.GET)
 public ModelAndView irFormulario(@ModelAttribute("modeloPersona")Persona persona,
-        BindingResult result){
-    
+        BindingResult result, Model model){
+    model.addAttribute("urlAccion", "guardarPersona"); 
 return new ModelAndView("persona/formPersona");
 }
 
@@ -104,6 +105,31 @@ public ModelAndView guardarEntidad(@ModelAttribute("modeloPersona")Persona perso
         BindingResult result){
         personaServicioI.guardarEntidad(persona);
     return new ModelAndView(new RedirectView("/"));
+}
+
+@RequestMapping(value = "/formModifPersona", method = RequestMethod.GET)
+public ModelAndView irModificarPersona(HttpServletRequest r ){
+   int id=Integer.parseInt(r.getParameter("id"));
+       Persona entidad=null;
+       entidad=personaServicioI.buscarEntidadId(id);
+    return new ModelAndView("persona/formPersona","modeloPersona",entidad);
+}
+
+@RequestMapping(value = "/formModif2Persona", method = RequestMethod.GET)
+public String irModificar2Persona(HttpServletRequest r, Model model ){
+   int id=Integer.parseInt(r.getParameter("id"));
+       Persona persona=null;
+       persona=personaServicioI.buscarEntidadId(id);
+       model.addAttribute("modeloPersona", persona);             
+       model.addAttribute("urlAccion", "actualizarPersona");             
+    return "persona/formPersona";
+}
+
+@RequestMapping(value = "actualizarPersona", method = RequestMethod.POST)
+public ModelAndView actualizarPersona(@ModelAttribute("modeloPersona") Persona entidad,
+                                      BindingResult result, HttpServletRequest r ){
+        personaServicioI.modificarEntidad(entidad);
+    return new ModelAndView(new RedirectView(r.getContextPath()+"/"));
 }
 
 }

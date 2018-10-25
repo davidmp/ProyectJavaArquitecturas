@@ -16,11 +16,12 @@
             <div class="box-header with-border">
               <h3 class="box-title">Formulario de Registro</h3>
             </div>
-    <c:url var="urlsave" value="${pageContext.request.contextPath}/guardarPersona" />
+    <c:url var="urlsave" value="${pageContext.request.contextPath}/${urlAccion}" />
     <frm:form modelAttribute="modeloPersona" method="post" action="${urlsave}" class="form-horizontal" >
   
             <div class="box-body">
                 <div class="form-group">
+                    <frm:hidden path="idPersona" />
                     <frm:label path="nombre" class="col-sm-2 control-label" >Nombres:</frm:label>
                     <div class="col-sm-10">
                     <frm:input path="nombre" class="form-control" />
@@ -47,8 +48,11 @@
               </div>
               <!-- /.box-body -->
 
-              <div class="box-footer">                
-                <input type="submit" value="Guardar" class="btn btn-primary pull-right" />
+              <div class="box-footer" style="margin-left: 80px">                
+                  <input type="submit" value="Guardar" class="btn btn-primary" />
+                  
+                  &nbsp;&nbsp;
+                  <a href="${pageContext.request.contextPath}/" class="btn btn-primary">Cancelar</a> 
               </div>            
     </frm:form>
 </div>

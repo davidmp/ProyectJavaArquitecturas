@@ -61,6 +61,7 @@
    </definition>  
   
    <definition name="*" extends="base-definition">
+       <put-attribute name="title" value="Academico Nivel 1" /> 
        <put-attribute name="body" value="/WEB-INF/upeu/modulos/{1}.jsp" />  
    </definition>
    

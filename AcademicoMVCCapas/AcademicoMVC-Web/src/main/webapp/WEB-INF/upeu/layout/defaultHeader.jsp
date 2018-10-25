@@ -16,10 +16,27 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
+            <a href="?lang=es" >              
+              <span class="flag-icon flag-icon-pe"></span>                                           
+            </a>           
+          </li>
+          <li class="dropdown messages-menu">
+            <a href="?lang=fr" >              
+              <span class="flag-icon flag-icon-fr"></span>                                           
+            </a>           
+          </li>
+          <li class="dropdown messages-menu">
+            <a href="?lang=en" >              
+              <span class="flag-icon flag-icon-us"></span>                                           
+            </a>           
+          </li>
+          
+          
+          <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
-            </a>
+            </a>           
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
               <li>

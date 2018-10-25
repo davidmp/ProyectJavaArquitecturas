@@ -70,7 +70,11 @@
                         <td>${dato.nombre}</td>
                         <td>${dato.apellidos}</td>
                         <td>${dato.dni}</td>
-                        <td><a href="${pageContext.request.contextPath}/elim?id=${dato.idPersona}">E</a></td>
+                        <td align="center">
+                            <a href="${pageContext.request.contextPath}/elim?id=${dato.idPersona}" ><span title="Eliminar" class="glyphicon glyphicon-remove"></span></a>
+                            <a href="${pageContext.request.contextPath}/formModif2Persona?id=${dato.idPersona}" ><span title="Editar" class="glyphicon glyphicon-edit"></span></a>
+                        
+                        </td>
                       </tr>
               </c:forEach> 
             </tbody>
