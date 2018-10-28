@@ -35,13 +35,22 @@ public class PersonaController {
     @Getter @Setter
     public List<Persona> listPersona;
 
+    @Getter @Setter
+    public String dato;
+    
     @PostConstruct
     public void init() {
             persona = new Persona();
+            dato="";
             listPersona = new ArrayList<>();
-            listPersona=findAllBooks();
-    }
         
+            if(dato.equals("")){
+            listPersona= resPersonaRepository.findAll();
+            }else{
+            listPersona=resPersonaRepository.findByNameColumEntidad("%"+dato+"%");
+            }
+    }
+    
     public String submit() {
             if (persona.getNombre() != null && persona.getApellidos() != null && persona.getDni() != null
                             && persona.getTelefono() != null) {
@@ -62,6 +71,10 @@ public class PersonaController {
     public List<Persona> findAllBooks() {
         return resPersonaRepository.findAll();
     } 
+    
+     public List<Persona> findAllBooksB() {
+        return resPersonaRepository.findByNameColumEntidad("%"+dato+"%");
+     }
     
     public void reset() {
             persona = new Persona();

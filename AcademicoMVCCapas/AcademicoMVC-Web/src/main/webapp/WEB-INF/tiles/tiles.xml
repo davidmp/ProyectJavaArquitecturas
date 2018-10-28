@@ -58,9 +58,24 @@
                     
 <!--                    <add-attribute value="/webjars/materializecss/1.0.0-rc.2/js/materialize.min.js" />-->
                 </put-list-attribute>       
+   </definition> 
+    
+   <definition name="base-definitionLogin"
+       template="/WEB-INF/upeu/layout/defaultLayoutLogin.jsp">  
+       <put-attribute name="title" value="Academico" />  
+       <put-attribute name="body" value="" />  
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+			<add-attribute value="/resources/css/ie10-viewport-bug-workaround.css" />
+			<add-attribute value="/resources/css/signin.css" />
+                </put-list-attribute>                 
+		
+                <put-list-attribute name="javascripts">
+                    <add-attribute value="/resources/js/ie10-viewport-bug-workaround.js" />                   
+                </put-list-attribute>       
    </definition>  
   
-   <definition name="*" extends="base-definition">
+   <definition name="*" extends="base-definitionLogin">
        <put-attribute name="title" value="Academico Nivel 1" /> 
        <put-attribute name="body" value="/WEB-INF/upeu/modulos/{1}.jsp" />  
    </definition>
@@ -72,6 +87,10 @@
    <definition name="*/*/*" extends="base-definition">
        <put-attribute name="title" value="Academico Nivel 3" />  
        <put-attribute name="body" value="/WEB-INF/upeu/modulos/{1}/{2}/{3}.jsp" />  
+   </definition>
+   <definition name="*/*/*/*" extends="base-definition">
+       <put-attribute name="title" value="Academico Nivel 4" />  
+       <put-attribute name="body" value="/WEB-INF/upeu/modulos/{1}/{2}/{3}/{4}.jsp" />  
    </definition>
 
   

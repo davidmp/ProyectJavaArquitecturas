@@ -40,7 +40,7 @@ public class PersonaControl {
     }
     
     
-@RequestMapping(value = {"/" }, method = RequestMethod.GET)    
+@RequestMapping(value = {"/perMain" }, method = RequestMethod.GET)    
 public ModelAndView inicio(Locale locale, Map<String,Object> model){
     String welcome=messageSource.getMessage("welcome.message", new Object[]{"David Mamani"}, locale);
     List<Persona> lista=personaServicioI.listarEntidad();
@@ -51,35 +51,44 @@ public ModelAndView inicio(Locale locale, Map<String,Object> model){
     model.put("message", welcome);
     model.put("startMeeting", "09:10");
     
-    return new ModelAndView("persona/mainPersona");
+    return new ModelAndView("global/persona/mainPersona");
+}
+
+@RequestMapping(value = {"/" }, method = RequestMethod.GET)    
+public ModelAndView inicioLoginForm(Locale locale, Map<String,Object> model){
+    return new ModelAndView("index");
+}
+@RequestMapping(value = {"/validate" }, method = RequestMethod.POST)    
+public ModelAndView inicioLoginValidate(Locale locale, Map<String,Object> model){
+    return new ModelAndView("global/home");
 }
 
 
 @RequestMapping(value = {"/pru1" }, method = RequestMethod.GET)    
 public ModelAndView inicioUno(){
     
-    return new ModelAndView("Prueba2");
+    return new ModelAndView("global/Prueba2");
 }
 @RequestMapping(value = {"/pru2" }, method = RequestMethod.GET)    
 public ModelAndView inicioDos(){
     
-    return new ModelAndView("Prueba3");
+    return new ModelAndView("global/Prueba3");
 }
 
 @RequestMapping(value = {"/pers" }, method = RequestMethod.GET)    
 public ModelAndView mainPersona(){    
-    return new ModelAndView("persona/mainPersona");
+    return new ModelAndView("global/persona/mainPersona");
 }
 @RequestMapping(value = {"/report" }, method = RequestMethod.GET)    
 public ModelAndView mainPersonaReport(){    
-    return new ModelAndView("persona/reporte/reportePersona");
+    return new ModelAndView("global/persona/reporte/reportePersona");
 }
 
 @RequestMapping(value = {"/elim" }, method = RequestMethod.GET)
 public ModelAndView eliminarPersona(HttpServletRequest r){
     int idEntidad=Integer.parseInt(r.getParameter("id"));
     personaServicioI.eliminarEntidad(idEntidad);
-return new ModelAndView(new RedirectView("/"));
+return new ModelAndView(new RedirectView("/perMain"));
 }
   
 @RequestMapping(value = {"/buscar"}, method = RequestMethod.POST)
@@ -90,14 +99,14 @@ public  ModelAndView buscarEntidad(Locale locale, Map<String,Object> model, Http
     model.put("ListaPersona", lista);
     model.put("message", welcome);
     model.put("startMeeting", "09:10");    
-return new ModelAndView("persona/mainPersona");
+return new ModelAndView("global/persona/mainPersona");
 }
 
 @RequestMapping(value = "/formPersona", method = RequestMethod.GET)
 public ModelAndView irFormulario(@ModelAttribute("modeloPersona")Persona persona,
         BindingResult result, Model model){
     model.addAttribute("urlAccion", "guardarPersona"); 
-return new ModelAndView("persona/formPersona");
+return new ModelAndView("global/persona/formPersona");
 }
 
 @RequestMapping(value = "/guardarPersona", method = RequestMethod.POST)
@@ -112,7 +121,7 @@ public ModelAndView irModificarPersona(HttpServletRequest r ){
    int id=Integer.parseInt(r.getParameter("id"));
        Persona entidad=null;
        entidad=personaServicioI.buscarEntidadId(id);
-    return new ModelAndView("persona/formPersona","modeloPersona",entidad);
+    return new ModelAndView("global/persona/formPersona","modeloPersona",entidad);
 }
 
 @RequestMapping(value = "/formModif2Persona", method = RequestMethod.GET)
@@ -122,14 +131,14 @@ public String irModificar2Persona(HttpServletRequest r, Model model ){
        persona=personaServicioI.buscarEntidadId(id);
        model.addAttribute("modeloPersona", persona);             
        model.addAttribute("urlAccion", "actualizarPersona");             
-    return "persona/formPersona";
+    return "global/persona/formPersona";
 }
 
 @RequestMapping(value = "actualizarPersona", method = RequestMethod.POST)
 public ModelAndView actualizarPersona(@ModelAttribute("modeloPersona") Persona entidad,
                                       BindingResult result, HttpServletRequest r ){
         personaServicioI.modificarEntidad(entidad);
-    return new ModelAndView(new RedirectView(r.getContextPath()+"/"));
+    return new ModelAndView(new RedirectView(r.getContextPath()+"/perMain"));
 }
 
 }

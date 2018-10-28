@@ -1,74 +1,15 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <script>
-    $( function() {
-      $( ".widget input[type=submit], .widget a, .widget button" ).button();
-      $( "button, input, a" ).click( function( event ) {
-        event.preventDefault();
-      } );
-    } );
-    </script>        
-    <h1>Hello World! MVC DMP</h1>
-    <br/>
-    <a href="/pers" class="btn btn-warning">Ir Persona</a>
-
-    <button class="ui-button ui-widget ui-corner-all">A button element</button>
-
-    <input class="ui-button ui-widget ui-corner-all" type="submit" value="A submit button">
-
-    <a class="ui-button ui-widget ui-corner-all" href="#">An anchor</a>  
-        
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>       
-  <br/>
-  Mensaje: 
-  ${message}
-   <br/>
-   
-   <p> <spring:message code="welcome.greeting" arguments="${startMeeting}" /> </p> 
-   <br/>
-   Cantidad Registros: 
-    <br/>
-    
-    <form action="${pageContext.request.contextPath}/buscar" method="POST">
-        <div class="card">
-        <div class="card-body">
-            <table>
-                <tr>
-                    <td>Nombre:</td>
-                    <td> <input type="text" class="form-control"  id="dato" name="dato"/></td>
-                    <td><input type="submit" value="Buscar" class="btn btn-primary"/>  </td>                                                
-                    <td><input type="button" value="Nuevo" class="btn btn-info"/>  </td>                                                
-                </tr>
-            </table> 
+<form class="form-signin" action="${pageContext.request.contextPath}/validate" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
         </div>
-        </div>
-
-        
-    </form>
-    <br/>
-    <c:if test="${!empty ListaPersona}">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Apellidos</th>
-          <th scope="col">DNI</th>
-          <th scope="col">Opciones</th>
-        </tr>
-      </thead>
-      <tbody>
-          <c:forEach items="${ListaPersona}" var="dato">
-                <tr>
-                  <th scope="row">1</th>
-                  <td>${dato.nombre}</td>
-                  <td>${dato.apellidos}</td>
-                  <td>${dato.dni}</td>
-                  <td><a href="${pageContext.request.contextPath}/elim?id=${dato.idPersona}">E</a></td>
-                </tr>
-        </c:forEach> 
-      </tbody>
-    </table>   
-    </c:if>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>

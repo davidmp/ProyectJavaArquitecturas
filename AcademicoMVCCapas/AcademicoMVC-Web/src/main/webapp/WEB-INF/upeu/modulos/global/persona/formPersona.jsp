@@ -52,7 +52,7 @@
                   <input type="submit" value="Guardar" class="btn btn-primary" />
                   
                   &nbsp;&nbsp;
-                  <a href="${pageContext.request.contextPath}/" class="btn btn-primary">Cancelar</a> 
+                  <a href="${pageContext.request.contextPath}/perMain" class="btn btn-primary">Cancelar</a> 
               </div>            
     </frm:form>
 </div>

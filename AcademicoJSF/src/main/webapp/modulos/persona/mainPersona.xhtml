@@ -5,13 +5,13 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"   
+<f:view xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core"
       >
-    <h:body>
+<!--    <h:body>-->
     	
     	<ui:composition template="/template/common/commonLayout.xhtml">    	
     		<ui:define name="content">
@@ -32,52 +32,25 @@ and open the template in the editor.
                       <!-- Main content -->
                       <section class="content">
 
-                        <div class="box box-primary">
-                                          <div class="box-header with-border">
-                                            <h3 class="box-title">Formulario de Registro</h3>
-                                          </div>
-                                <div class="box-body">
+            <div class="box">
+            <div class="box-body">
+              <h:form>
 
-                                    <h:form id="form">
-                                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
-                                        <p:growl for="errors" showDetail="true" autoUpdate="true"/>
-                                                <div class="form-group">
-                                                        <label class="col-sm-2 control-label"> Nombre :</label>                                                        
-                                                        <p:inputText id="name" class="col-sm-10" value="#{personaController.persona.nombre}"   requiredMessage="" />                                                        
-                                                </div>
-                                                <div class="form-group">
-                                                        <label class="col-sm-2 control-label"> Apellidos :</label>
-                                                        <p:inputText id="email" class="col-sm-10" value="#{personaController.persona.apellidos}" requiredMessage="" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <label class="col-sm-2 control-label"> DNI :</label>
-                                                        <p:inputText id="datepicker" class="col-sm-10" value="#{personaController.persona.dni}" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <label class="col-sm-2 control-label"> Telefono:</label>
-                                                        <p:inputText id="datepicker1" class="col-sm-10" value="#{personaController.persona.telefono}" />
-
-                                                </div>
-
-                                                <div class="form-group">
-                                                        <h:outputLabel rendered="#{personaController.persona.dni != null}"> Reserva Realizada :</h:outputLabel>
-                                                        <h:outputText id="reservaRealizada" value="#{personaController.persona.dni}" rendered="#{personaController.persona.dni != null}" />
-
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <p:commandButton value="Reservar" id="reservar" update="form" actionListener="#{personaController.submit}" ajax="false" />
-                                                </div>
-
-                                                <p:separator />
-
-                                                <div class="form-group">
-                                                        <p:commandButton value="Reset" id="reset" update="form" actionListener="#{personaController.reset}" />
-                                                </div>
-                                        </h:form>
-                                </div>
-
-                        </div>
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Nombre:</label>
+                  <div class="col-sm-6">                      
+                      <p:inputText id="dato" class="form-control" value="#{personaController.dato}"   requiredMessage="" />                                                                              
+                  </div>                
+                  <div class="col-sm-2">                      
+                      <p:commandButton value="Buscar" class="btn btn-primary" id="reservar" update="form" actionListener="#{personaController.findAllBooksB}"  ajax="false" />                      
+                  </div>
+                  <div class="col-sm-2">
+                      <a class="btn btn-info" href="#{pageContext.request.contextPath}/AcademicoJSF/modulos/persona/formPersona.xhtml">Nuevo</a>  
+                  </div>
+              </div>
+              </h:form>
+            </div>
+            </div>                         
                            
             <div class="box box-primary">
 		
@@ -112,6 +85,7 @@ and open the template in the editor.
                         </f:facet>
                         <h:outputText value="#{bk.telefono}"/>
                     </p:column>
+
                 </p:dataTable>
 
                     <h3>Export Page Data Only</h3>
@@ -142,6 +116,6 @@ and open the template in the editor.
     		</ui:define>    		
     	</ui:composition>
     	
-    </h:body>
+<!--    </h:body>-->
 
-</html>
+</f:view>

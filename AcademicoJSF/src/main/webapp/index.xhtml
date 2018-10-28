@@ -5,14 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      >
-    <h:body>
-    	
-    	<ui:composition template="/template/common/commonLayout.xhtml">    	
+
+    	<ui:composition 
+            xmlns="http://www.w3.org/1999/xhtml"   
+            xmlns:h="http://java.sun.com/jsf/html"
+            xmlns:ui="http://java.sun.com/jsf/facelets"
+            xmlns:p="http://primefaces.org/ui"          
+            xmlns:f="http://xmlns.jcp.org/jsf/core"
+            template="/template/common/commonLayout.xhtml">    	
     		<ui:define name="content">
     			            <!-- Content Wrapper. Contains page content -->
                     <div class="content-wrapper">
@@ -48,7 +48,3 @@ and open the template in the editor.
                     </div><!-- /.content-wrapper -->
     		</ui:define>    		
     	</ui:composition>
-    	
-    </h:body>
-
-</html>
