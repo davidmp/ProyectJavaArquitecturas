@@ -33,6 +33,7 @@
           </a>
           <ul class="treeview-menu">
                     <li class="active"><a href="${pageContext.request.contextPath}/perMain"><i class="fa fa-circle-o"></i> Persona</a></li>                                        
+                    <li ><a href="${pageContext.request.contextPath}/provMain"><i class="fa fa-circle-o"></i> Proveedor</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pru1"><i class="fa fa-circle-o"></i> Prueba1</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pru2"><i class="fa fa-circle-o"></i> Prueba2</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pers"><i class="fa fa-circle-o"></i> Persona Main</a></li>

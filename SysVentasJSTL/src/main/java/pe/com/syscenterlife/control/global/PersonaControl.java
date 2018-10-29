@@ -160,8 +160,14 @@ public String irModificar2Persona(HttpServletRequest r, Model model ){
 @RequestMapping(value = "actualizarPersona", method = RequestMethod.POST)
 public ModelAndView actualizarPersona(@ModelAttribute("modeloPersona") GloPersonas entidad,
                                       BindingResult result, HttpServletRequest r ){
+        try {
         personaServicioI.modificarEntidad(entidad);
-    return new ModelAndView(new RedirectView(r.getContextPath()+"/perMain"));
+        return new ModelAndView(new RedirectView(r.getContextPath()+"/perMain"));
+    } catch (Exception e) {
+        logger.info("Error al modificar: "+e.getMessage());
+        return new ModelAndView(new RedirectView(r.getContextPath()+"/formModif2Persona?id="+entidad.getIdPersona()));
+    }
+    
 }
 
 }
