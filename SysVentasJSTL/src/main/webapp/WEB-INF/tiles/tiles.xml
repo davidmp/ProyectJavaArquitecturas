@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+                                    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+ 
+<tiles-definitions>  
+  
+   <!-- Base Definition -->
+   <definition name="base-definition"
+       template="/WEB-INF/web/layout/defaultLayout.jsp">  
+       <put-attribute name="title" value="Academico" />  
+       <put-attribute name="header" value="/WEB-INF/web/layout/defaultHeader.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/web/layout/defaultMenu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/web/layout/defaultFooter.jsp" />  
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/font-awesome/css/font-awesome.min.css" />
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/Ionicons/css/ionicons.min.css" />
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/jvectormap/jquery-jvectormap.css" />                        
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />                          
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" /> 
+                                              
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/dist/css/AdminLTE.min.css" />
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/dist/css/skins/_all-skins.min.css" />
+                        
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/morris.js/morris.css" />                        
+                      
+                        <add-attribute value="/webjars/AdminLTE/2.4.2/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
+                        <add-attribute value="/webjars/toastr/2.1.2/build/toastr.min.css" />
+                        
+<!--                        <add-attribute value="/webjars/materializecss/1.0.0-rc.2/css/materialize.min.css" />-->
+                </put-list-attribute>                 
+		
+
+                <put-list-attribute name="javascripts">
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/jquery/dist/jquery.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/jquery-ui/jquery-ui.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap/dist/js/bootstrap.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/datatables.net/js/jquery.dataTables.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js" />                      
+                    
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/raphael/raphael.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/morris.js/morris.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" />
+                    
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/jquery-knob/dist/jquery.knob.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/moment/min/moment.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap-daterangepicker/daterangepicker.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js" />
+                    
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" />
+                    
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/jquery-slimscroll/jquery.slimscroll.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/fastclick/lib/fastclick.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/dist/js/adminlte.min.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/dist/js/pages/dashboard2.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/dist/js/demo.js" />
+                    <add-attribute value="/webjars/toastr/2.1.2/build/toastr.min.js" />
+                  
+                    
+<!--                    <add-attribute value="/webjars/materializecss/1.0.0-rc.2/js/materialize.min.js" />-->
+                </put-list-attribute>       
+   </definition> 
+    
+   <definition name="base-definitionLogin"
+       template="/WEB-INF/web/layout/defaultLayoutLogin.jsp">  
+       <put-attribute name="title" value="Academico" />  
+       <put-attribute name="body" value="" />  
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+			<add-attribute value="/resources/css/ie10-viewport-bug-workaround.css" />
+			<add-attribute value="/resources/css/signin.css" />
+                </put-list-attribute>                 
+		
+                <put-list-attribute name="javascripts">
+                    <add-attribute value="/resources/js/ie10-viewport-bug-workaround.js" />                   
+                </put-list-attribute>       
+   </definition>  
+  
+   <definition name="*" extends="base-definitionLogin">
+       <put-attribute name="title" value="Academico Nivel 1" /> 
+       <put-attribute name="body" value="/WEB-INF/web/modulos/{1}.jsp" />  
+   </definition>
+   
+   <definition name="*/*" extends="base-definition">
+       <put-attribute name="title" value="Academico Nivel 2" />  
+       <put-attribute name="body" value="/WEB-INF/web/modulos/{1}/{2}.jsp" />  
+   </definition>
+   <definition name="*/*/*" extends="base-definition">
+       <put-attribute name="title" value="Academico Nivel 3" />  
+       <put-attribute name="body" value="/WEB-INF/web/modulos/{1}/{2}/{3}.jsp" />  
+   </definition>
+   <definition name="*/*/*/*" extends="base-definition">
+       <put-attribute name="title" value="Academico Nivel 4" />  
+       <put-attribute name="body" value="/WEB-INF/web/modulos/{1}/{2}/{3}/{4}.jsp" />  
+   </definition>
+
+  
+</tiles-definitions>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="pe.com.syscenterlife_SysVentasJSTL_war_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>pe.com.syscenterlife.modelo.SysPerfiles</class>
+    <class>pe.com.syscenterlife.modelo.GloUnidadmedProducto</class>
+    <class>pe.com.syscenterlife.modelo.SysAccesosPerfiles</class>
+    <class>pe.com.syscenterlife.modelo.VentVoucher</class>
+    <class>pe.com.syscenterlife.modelo.GloManufacturaAlmacen</class>
+    <class>pe.com.syscenterlife.modelo.CompCompras</class>
+    <class>pe.com.syscenterlife.modelo.CompCompraDetalles</class>
+    <class>pe.com.syscenterlife.modelo.GloEmpresa</class>
+    <class>pe.com.syscenterlife.modelo.VentClientes</class>
+    <class>pe.com.syscenterlife.modelo.GloComprobante</class>
+    <class>pe.com.syscenterlife.modelo.SysMenu</class>
+    <class>pe.com.syscenterlife.modelo.GloAperturaPeriodo</class>
+    <class>pe.com.syscenterlife.modelo.GloUsuarioalmacen</class>
+    <class>pe.com.syscenterlife.modelo.GloUnidadMedida</class>
+    <class>pe.com.syscenterlife.modelo.GloUsuario</class>
+    <class>pe.com.syscenterlife.modelo.GloAlmacen</class>
+    <class>pe.com.syscenterlife.modelo.VentDetalleGuiaremision</class>
+    <class>pe.com.syscenterlife.modelo.GloManufactura</class>
+    <class>pe.com.syscenterlife.modelo.ContCuenta</class>
+    <class>pe.com.syscenterlife.modelo.ContDivision</class>
+    <class>pe.com.syscenterlife.modelo.GloCodigopostal</class>
+    <class>pe.com.syscenterlife.modelo.ContSubdivCuenta</class>
+    <class>pe.com.syscenterlife.modelo.GloTipomoneda</class>
+    <class>pe.com.syscenterlife.modelo.SysAccesos</class>
+    <class>pe.com.syscenterlife.modelo.VentCotordenventa</class>
+    <class>pe.com.syscenterlife.modelo.GloConfiguracion</class>
+    <class>pe.com.syscenterlife.modelo.GloTipodocidentidad</class>
+    <class>pe.com.syscenterlife.modelo.SysPrivilegios</class>
+    <class>pe.com.syscenterlife.modelo.GloTipomanufact</class>
+    <class>pe.com.syscenterlife.modelo.GloCompanhia</class>
+    <class>pe.com.syscenterlife.modelo.GloCategoriamanufact</class>
+    <class>pe.com.syscenterlife.modelo.VentDespachos</class>
+    <class>pe.com.syscenterlife.modelo.VentGuiaremision</class>
+    <class>pe.com.syscenterlife.modelo.SysGrupo</class>
+    <class>pe.com.syscenterlife.modelo.VentTipoCliente</class>
+    <class>pe.com.syscenterlife.modelo.GloPersonas</class>
+    <class>pe.com.syscenterlife.modelo.VentSalidadivDetalles</class>
+    <class>pe.com.syscenterlife.modelo.VentVentaServicio</class>
+    <class>pe.com.syscenterlife.modelo.CompVoucher</class>
+    <class>pe.com.syscenterlife.modelo.VentVentas</class>
+    <class>pe.com.syscenterlife.modelo.VentVentaServicioDetalle</class>
+    <class>pe.com.syscenterlife.modelo.GloUnidadmedManufact</class>
+    <class>pe.com.syscenterlife.modelo.GloAlmacenProducto</class>
+    <class>pe.com.syscenterlife.modelo.CompDespachos</class>
+    <class>pe.com.syscenterlife.modelo.GloAreaUsuario</class>
+    <class>pe.com.syscenterlife.modelo.VentDetalleCotordenventa</class>
+    <class>pe.com.syscenterlife.modelo.ContSubCuenta</class>
+    <class>pe.com.syscenterlife.modelo.VentVentasDetalles</class>
+    <class>pe.com.syscenterlife.modelo.GloSucursal</class>
+    <class>pe.com.syscenterlife.modelo.GloProductos</class>
+    <class>pe.com.syscenterlife.modelo.GloPeriodo</class>
+    <class>pe.com.syscenterlife.modelo.ContElemento</class>
+    <class>pe.com.syscenterlife.modelo.VentSalidaDiversa</class>
+    <class>pe.com.syscenterlife.modelo.GloCategoriaProducto</class>
+    <class>pe.com.syscenterlife.modelo.AutHistorial</class>
+    <class>pe.com.syscenterlife.modelo.GloCargo</class>
+    <class>pe.com.syscenterlife.modelo.CompTipoProveedor</class>
+    <class>pe.com.syscenterlife.modelo.CompProveedores</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sysventas?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+    </properties>
+  </persistence-unit>
+</persistence>
