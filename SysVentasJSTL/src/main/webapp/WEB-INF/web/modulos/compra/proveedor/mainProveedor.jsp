@@ -6,7 +6,7 @@
     </section>    
     <section class="content">
         <h2>Pagina Proveedor</h2>
-
+        <a href="${pageContext.request.contextPath}/formProveedor">Nuevo</a>
     </section>
 
 </div>
