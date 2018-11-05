@@ -20,7 +20,7 @@
                 
                    
                 <div class="form-group" >
-                    <frm:label path="idPersona" class="col-sm-2 control-label">Sexo:</frm:label>
+                    <frm:label path="idPersona" class="col-sm-2 control-label">Persona:</frm:label>
                     <div class="col-sm-10">
                     <frm:select path="idPersona" class="form-control select2" style="width: 100%;">
                         <frm:options items="${ListPersonas}" itemLabel="nombre" itemValue="idPersona" />
