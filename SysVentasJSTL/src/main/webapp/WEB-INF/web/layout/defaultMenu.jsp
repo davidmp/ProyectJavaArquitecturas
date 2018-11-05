@@ -38,7 +38,7 @@
                     <li ><a href="${pageContext.request.contextPath}/manuMain"><i class="fa fa-circle-o"></i> Manufactura</a></li>
                     <li ><a href="${pageContext.request.contextPath}/sysMenu"><i class="fa fa-circle-o"></i> Menú</a></li>  
                     <li ><a href="${pageContext.request.contextPath}/catProMain"><i class="fa fa-circle-o"></i> Categ. Producto</a></li> 
-                    <li ><a href="${pageContext.request.contextPath}/prodMain"><i class="fa fa-circle-o"></i> Productos</a></li>                   
+                    <li ><a href="${pageContext.request.contextPath}/prodMain"><i class="fa fa-circle-o"></i> U. M. Productos</a></li>                   
                     <li ><a href="${pageContext.request.contextPath}/tipoclientemain"><i class="fa fa-circle-o"></i> T. Cliente Ventas</a></li>                    
                     <li ><a href="${pageContext.request.contextPath}/pru1"><i class="fa fa-circle-o"></i> Prueba1</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pru2"><i class="fa fa-circle-o"></i> Prueba2</a></li>

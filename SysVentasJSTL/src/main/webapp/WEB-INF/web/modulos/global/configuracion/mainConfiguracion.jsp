@@ -69,7 +69,7 @@
                         <td>${dato.idCuentaIgv}</td>
                       
                         <td align="center">
-                            <a href="${pageContext.request.contextPath}/elim?id=${dato.idConfiguracion}" ><span title="Eliminar" class="glyphicon glyphicon-remove"></span></a>
+                            <a href="${pageContext.request.contextPath}/elimConfi?id=${dato.idConfiguracion}" ><span title="Eliminar" class="glyphicon glyphicon-remove"></span></a>
                             <a href="${pageContext.request.contextPath}/formModif2Configuracion?id=${dato.idConfiguracion}" ><span title="Editar" class="glyphicon glyphicon-edit"></span></a>
                         
                         </td>

@@ -16,11 +16,12 @@
                 <h3 class="box-title">Formulario de Registro</h3>
             </div>
             <c:url var="urlsave" value="${pageContext.request.contextPath}/${urlAccion}" />
-            <frm:form modelAttribute="modeloump" method="post" action="${urlsave}" class="form-horizontal" >
+            <frm:form modelAttribute="modeloump" method="POST" action="${urlsave}" class="form-horizontal" >
 
                 <div class="box-body">
                     <div class="form-group">
                         <frm:hidden path="idUnidMedProducto" />
+                        
                         <frm:label path="cantidad" class="col-sm-2 control-label" >Cantidad:</frm:label>
                             <div class="col-sm-10">
                             <frm:input path="cantidad" class="form-control" />
@@ -39,16 +40,16 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <frm:label path="idProducto" class="col-sm-2 control-label">Producto:</frm:label>
+                        <frm:label path="idProducto.idProducto" class="col-sm-2 control-label">Producto:</frm:label>
                             <div class="col-sm-10">
-                            <frm:select path="idProducto" class="form-control select2" style="width: 100%;">
+                            <frm:select path="idProducto.idProducto" class="form-control select2" style="width: 100%;">
                                 <frm:options items="${ListaProducto}" itemLabel="nombre" itemValue="idProducto" />
                             </frm:select></div>
                     </div>
                     <div class="form-group">
-                        <frm:label path="idUnidadMedida" class="col-sm-2 control-label">Unidad Medida:</frm:label>
+                        <frm:label path="idUnidadMedida.idUnidadMedida" class="col-sm-2 control-label">Unidad Medida:</frm:label>
                             <div class="col-sm-10">
-                            <frm:select path="idUnidadMedida" class="form-control select2" style="width: 100%;">
+                            <frm:select path="idUnidadMedida.idUnidadMedida" class="form-control select2" style="width: 100%;">
                                 <frm:options items="${ListarUnidadMedida}" itemLabel="nombre" itemValue="idUnidadMedida" />
                             </frm:select></div>
                     </div>

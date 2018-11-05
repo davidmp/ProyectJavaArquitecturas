@@ -81,23 +81,28 @@ public class UnidmedidaProductoControl {
 
     @RequestMapping(value = "/formump", method = RequestMethod.GET)
     public ModelAndView irFormulario(@ModelAttribute("modeloump") GloUnidadmedProducto ump,
-            BindingResult result, Model model) {
+            BindingResult result, Map<String,Object> model) {
         List<GloUnidadMedida> Umedida = unidadmedidaServicioI.listarEntidad();
-        model.addAttribute("urlAccion", "guardarUMP");
-        model.addAttribute("ListarUnidadMedida", Umedida);
+        model.put("urlAccion", "guardarUMP");
+        model.put("ListarUnidadMedida", Umedida);
 //
         List<GloProductos> producto = productoServicioI.listarEntidad();
-        model.addAttribute("ListaProducto", producto);
+        model.put("ListaProducto", producto);
         return new ModelAndView("global/unidadmediproducto/formUnimPro");
     }
 //
  @RequestMapping(value = "/guardarUMP", method = RequestMethod.POST)
-    public ModelAndView guardarEntidad(@ModelAttribute("modeloump")GloUnidadmedProducto ump, BindingResult result, Model model){        
-        if(ump.getIdUnidMedProducto()== null)
+    public ModelAndView guardarEntidad(@ModelAttribute("modeloump") GloUnidadmedProducto ump, BindingResult result, Model model){        
+        
+     try {
+            if(ump.getIdUnidMedProducto()== null)
             UmedidaproductoServicioI.guardarEntidad(ump);
 	else
             UmedidaproductoServicioI.modificarEntidad(ump);
-        return new ModelAndView(new RedirectView("/prodMain"));
+        
+     } catch (Exception e) { logger.info("ERRROR :"+e.getMessage());
+     }
+     return new ModelAndView(new RedirectView("/prodMain"));
     } 
 
     
