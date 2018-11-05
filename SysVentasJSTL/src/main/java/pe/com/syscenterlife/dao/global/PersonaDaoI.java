@@ -7,6 +7,7 @@ package pe.com.syscenterlife.dao.global;
 
 import java.util.List;
 import pe.com.syscenterlife.modelo.GloPersonas;
+import pe.com.syscenterlife.utils.IdGenerator;
 
 /**
  *
@@ -19,4 +20,5 @@ public interface PersonaDaoI {
     public void guardarEntidad(GloPersonas persona);
     public void eliminarEntidad(int id);
     public void modificarEntidad(GloPersonas persona);
+    public IdGenerator idPersonaGenerator();
 }

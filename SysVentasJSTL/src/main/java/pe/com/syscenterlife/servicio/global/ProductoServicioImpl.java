@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.com.syscenterlife.dao.global.ProductoDaoI;
 import pe.com.syscenterlife.modelo.GloProductos;
+import pe.com.syscenterlife.utils.IdGenerator;
 
 /**
  *
@@ -53,4 +54,5 @@ public class ProductoServicioImpl implements ProductoServicioI{
         dao.modificarEntidad(producto); 
     }
     
+
 }

@@ -119,6 +119,9 @@ public ModelAndView guardarEntidad(@ModelAttribute("modeloPersona")GloPersonas p
         BindingResult result, HttpServletRequest r){
         logger.info("Error Fecha: "+persona.getFechaNacimiento());
         try {
+        //personaTo.setIdPersona(new PersonaServicioImpl().idGeneradorPersona().getId());        
+        persona.setIdPersona(personaServicioI.idPersonaGenerator().getId());
+        logger.info("Imprimir ID: "+persona.getIdPersona());
         personaServicioI.guardarEntidad(persona);
         return new ModelAndView(new RedirectView("/perMain"));
         } catch (Exception e) { 

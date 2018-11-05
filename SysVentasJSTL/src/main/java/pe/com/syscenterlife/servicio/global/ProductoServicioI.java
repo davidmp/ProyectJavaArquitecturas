@@ -7,6 +7,7 @@ package pe.com.syscenterlife.servicio.global;
 
 import java.util.List;
 import pe.com.syscenterlife.modelo.GloProductos;
+import pe.com.syscenterlife.utils.IdGenerator;
 
 /**
  *
@@ -19,4 +20,5 @@ public interface ProductoServicioI {
     public void guardarEntidad(GloProductos producto);
     public void eliminarEntidad(int id);
     public void modificarEntidad(GloProductos producto);
+    
 }

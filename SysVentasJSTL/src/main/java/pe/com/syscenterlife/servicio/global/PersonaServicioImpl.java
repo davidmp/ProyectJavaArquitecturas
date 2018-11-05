@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pe.com.syscenterlife.dao.global.PersonaDaoI;
 
 import pe.com.syscenterlife.modelo.GloPersonas;
+import pe.com.syscenterlife.utils.IdGenerator;
 
 /**
  *
@@ -36,4 +37,7 @@ public class PersonaServicioImpl implements PersonaServicioI{
     public void eliminarEntidad(int id){dao.eliminarEntidad(id);}
     @Override
     public void modificarEntidad(GloPersonas persona){dao.modificarEntidad(persona);}
+    
+    @Override
+    public IdGenerator idPersonaGenerator(){ return dao.idPersonaGenerator();  }
 }
