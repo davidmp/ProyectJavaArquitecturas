@@ -199,6 +199,14 @@
 			</snapshots>
 		</repository>
 		<repository>
+			<id>spring-maven2</id>
+			<name>Spring Snapshots2</name>
+			<url>http://www.datanucleus.org/downloads/maven2/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>

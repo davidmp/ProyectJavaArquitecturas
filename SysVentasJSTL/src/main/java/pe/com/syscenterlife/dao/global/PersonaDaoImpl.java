@@ -9,9 +9,10 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import pe.com.syscenterlife.SysDataAccess;
 import pe.com.syscenterlife.modelo.GloPersonas;
-import pe.com.syscenterlife.utils.IdGenerator;
+import pe.com.syscenterlife.modelo.IdGenerator;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 /**
  *
  * @author LAB_SOFTWARE-DTI
@@ -28,16 +29,15 @@ public class PersonaDaoImpl extends SysDataAccess<Integer, GloPersonas> implemen
     @Override
     public IdGenerator idPersonaGenerator(){
         IdGenerator to=null;
-        Session sesion=sessionFactory.openSession();      
-        Transaction t = sesion.beginTransaction();
+     
         try {     
-        to= (IdGenerator)sesion
-                .createSQLQuery("SELECT ((CASE WHEN MAX(idpersona) IS NULL THEN 0 ELSE MAX(idpersona) END)+1) AS id FROM glo_personas a  ")
-                .addEntity(IdGenerator.class).uniqueResult();           
+        to= (IdGenerator) sessionFactory.getCurrentSession()
+                .createNativeQuery(" SELECT ((CASE WHEN MAX(a.idpersona) IS NULL THEN 0 ELSE MAX(a.idpersona) END)+1) AS id FROM glo_personas a ", IdGenerator.class)                
+               .uniqueResult();           
         }catch (Exception e) { logger.info("Mensage de Error en idPersonaGenerator() "+e.getMessage());   }
-        finally{ t.commit(); }
+              
         return to;           
-    }    
+    }  
     
     @Override
     public List<GloPersonas> listarEntidadDato(String dato){

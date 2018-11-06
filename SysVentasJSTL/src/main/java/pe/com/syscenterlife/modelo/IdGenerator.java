@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.com.syscenterlife.utils;
+package pe.com.syscenterlife.modelo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -14,6 +14,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class IdGenerator implements Serializable{
+    
     @Id
     private int id;
 

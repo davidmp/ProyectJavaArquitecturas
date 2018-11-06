@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pe.com.syscenterlife.dao.global.PersonaDaoI;
 
 import pe.com.syscenterlife.modelo.GloPersonas;
-import pe.com.syscenterlife.utils.IdGenerator;
+import pe.com.syscenterlife.modelo.IdGenerator;
 
 /**
  *

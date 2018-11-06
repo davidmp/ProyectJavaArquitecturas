@@ -7,7 +7,7 @@ package pe.com.syscenterlife.servicio.global;
 
 import java.util.List;
 import pe.com.syscenterlife.modelo.GloPersonas;
-import pe.com.syscenterlife.utils.IdGenerator;
+import pe.com.syscenterlife.modelo.IdGenerator;
 
 /**
  *
