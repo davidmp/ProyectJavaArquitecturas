@@ -39,6 +39,7 @@ public class GloPersonas implements Serializable {
     @Id
     //Si es en Oracle comentar esta linea de GeneratedValue
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idPersona")
     private Integer idPersona;
