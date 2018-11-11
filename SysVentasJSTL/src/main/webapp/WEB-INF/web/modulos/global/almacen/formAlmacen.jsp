@@ -1,7 +1,7 @@
 <%-- 
-    Document   : formPersona
-    Created on : 03/10/2018, 11:47:27 AM
-    Author     : LAB_SOFTWARE-DTI
+    Document   : formAlmacen
+    Created on : 31-oct-2018, 15:31:34
+    Author     : TOSHIBA
 --%>
 
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -17,25 +17,34 @@
               <h3 class="box-title">Formulario de Registro</h3>
             </div>
     <c:url var="urlsave" value="${pageContext.request.contextPath}/${urlAccion}" />
-    <frm:form modelAttribute="modeloConfiguracion" method="post" action="${urlsave}" class="form-horizontal" >
+    <frm:form modelAttribute="modeloAlmacen" method="POST" action="${urlsave}" class="form-horizontal" >
   
             <div class="box-body">
                 <div class="form-group">
-                    <frm:hidden path="idConfiguracion" />
-                    <frm:label path="idCuentaIgv" class="col-sm-2 control-label" >Cuenta IGV.:</frm:label>
+                    <frm:hidden path="idAlmacen" />
+                    <frm:label path="nombreAlmacen" class="col-sm-2 control-label" >Nombre Almacen</frm:label>
                     <div class="col-sm-10">
-                    <frm:input path="idCuentaIgv" class="form-control" />
+                    <frm:input path="nombreAlmacen" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">                    
-                    <frm:label path="igvPorcent" class="col-sm-2 control-label" >Porcent. IGV:</frm:label>
+                    <frm:label path="descripcion" class="col-sm-2 control-label" >Descripcion:</frm:label>
                     <div class="col-sm-10">
-                    <frm:input path="igvPorcent" class="form-control" />
+                    <frm:input path="descripcion" class="form-control" />
                     </div>
                 </div>
-                
-
-              </div>
+                <div class="form-group">
+                    <frm:label path="estado" class="col-sm-2 control-label">Estado:</frm:label>
+                    <div class="col-sm-10"><frm:input path="estado" class="form-control"  /></div>                    
+                </div>
+                <div class="form-group" >
+                    <frm:label path="idSucursal.idSucursal" class="col-sm-2 control-label">Id Sucursal:</frm:label>
+                    <div class="col-sm-10">
+                    <frm:select path="idSucursal.idSucursal" class="form-control select2" style="width: 100%;">
+                        <frm:options items="${ListaSucursal}" itemValue="idSucursal" itemLabel="Direccion"/>
+                    </frm:select></div>
+                </div>
+            </div>
               <!-- /.box-body -->
 
                         
@@ -43,13 +52,13 @@
                   <input type="submit" value="Guardar" class="btn btn-primary" />
                   
                   &nbsp;&nbsp;
-                  <a href="${pageContext.request.contextPath}/confiMain" class="btn btn-primary">Cancelar</a> 
+                  <a href="${pageContext.request.contextPath}/almMain" class="btn btn-primary">Cancelar</a> 
               </div>            
     </frm:form>
 </div>
 
 </section> 
-<script type="text/javascript">
+ <script type="text/javascript">
     $(function () {
        //$('#datetimepicker1').datetimepicker();
     $('#datepicker').datepicker({        
@@ -63,6 +72,6 @@
         $('#datepicker').val(dato2.replace('-','/'));
         //alert(dato2.replace('-','/'));
     });
-</script>     
+</script>   
 </div> 
   

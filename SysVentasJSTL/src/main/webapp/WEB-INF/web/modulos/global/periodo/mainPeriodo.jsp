@@ -14,7 +14,7 @@
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
       <li class="active">Here</li>
-      <li class="active"><a href="/confiMain" class="btn btn-warning">Ir Configuracion</a></li>
+      <li class="active"><a href="/pers" class="btn btn-warning">Ir Persona</a></li>
     </ol>
   </section>
 
@@ -30,10 +30,10 @@
     <br/>
           <div class="box">
           <div class="box-body">
-            <form action="${pageContext.request.contextPath}/buscarConfi" method="POST">
+            <form action="${pageContext.request.contextPath}/buscarPeriodo" method="POST">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Nombre:</label>
+                <label class="col-sm-2 control-label">Periodo:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control"  id="dato" name="dato"/>                     
                 </div>                
@@ -41,42 +41,52 @@
                     <input type="submit" value="Buscar" class="btn btn-primary"/>
                 </div>
                 <div class="col-sm-1">
-                    <a class="btn btn-info" href="${pageContext.request.contextPath}/formConfiguracion">Nuevo</a>  
+                    <a class="btn btn-info" href="${pageContext.request.contextPath}/formPersona">Nuevo</a>  
                 </div>
             </div>
               </form>
           </div>
           </div>        
-    <c:if test="${!empty ListaConfiguracion}">
+    <c:if test="${!empty ListaPeriodo}">
         <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Reporte de Configuraciones</h3>                                    
+                    <h3 class="box-title">Reporte de Periodos</h3>                                    
                 </div><!-- /.box-header -->        
         <div class="box-body table-responsive">
         <table id="example1" class="table table-bordered table-striped">
           <thead >
             <tr>
               <th >#</th>
-              <th >IGV</th>
-              
+              <th >Periodo</th>
+              <th >Fecha Inicio</th>
+              <th >Fecha Fin</th>
               <th >Opciones</th>
             </tr>
           </thead>
           <tbody>
-                <c:forEach items="${ListaConfiguracion}" var="dato">
+                <c:forEach items="${ListaPeriodo}" var="dato">
                       <tr>
                         <th >1</th>
-                        <td>${dato.idCuentaIgv}</td>
-                      
+                        <td>${dato.periodo}</td>
+                        <td>${dato.fechaInicio}</td>
+                        <td>${dato.fechaFin}</td>
                         <td align="center">
-                            <a href="${pageContext.request.contextPath}/elimConfi?id=${dato.idConfiguracion}" ><span title="Eliminar" class="glyphicon glyphicon-remove"></span></a>
-                            <a href="${pageContext.request.contextPath}/formModif2Configuracion?id=${dato.idConfiguracion}" ><span title="Editar" class="glyphicon glyphicon-edit"></span></a>
+                            <a href="${pageContext.request.contextPath}/elimPeriodo?id=${dato.idPeriodo}" ><span title="Eliminar" class="glyphicon glyphicon-remove"></span></a>
+                            <a href="${pageContext.request.contextPath}/formModif2Periodo?id=${dato.idPeriodo}" ><span title="Editar" class="glyphicon glyphicon-edit"></span></a>
                         
                         </td>
                       </tr>
               </c:forEach> 
             </tbody>
-            
+            <tfoot>
+                <tr>
+                <th >#</th>
+                <th >Periodo</th>
+                <th >Fecha Inicio</th>
+                <th >Fecha Fin</th>
+                <th >Opciones</th>
+                </tr>
+            </tfoot>            
           </table>  
           </div>
         </div>                                

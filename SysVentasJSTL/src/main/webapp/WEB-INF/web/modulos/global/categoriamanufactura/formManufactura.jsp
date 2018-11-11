@@ -14,41 +14,38 @@
 <section class="content">    
     <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Formulario de Registro</h3>
+              <h3 class="box-title">Formulario de Manufactura</h3>
             </div>
     <c:url var="urlsave" value="${pageContext.request.contextPath}/${urlAccion}" />
-    <frm:form modelAttribute="modeloConfiguracion" method="post" action="${urlsave}" class="form-horizontal" >
+    <frm:form modelAttribute="modeloCategoria" method="POST" action="${urlsave}" class="form-horizontal" >
   
             <div class="box-body">
                 <div class="form-group">
-                    <frm:hidden path="idConfiguracion" />
-                    <frm:label path="idCuentaIgv" class="col-sm-2 control-label" >Cuenta IGV.:</frm:label>
+                    <frm:hidden path="idCategoriamanufactura" />
+                    <frm:label path="nombre" class="col-sm-2 control-label" >Nombre:</frm:label>
                     <div class="col-sm-10">
-                    <frm:input path="idCuentaIgv" class="form-control" />
+                    <frm:input path="nombre" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">                    
-                    <frm:label path="igvPorcent" class="col-sm-2 control-label" >Porcent. IGV:</frm:label>
+                    <frm:label path="estado" class="col-sm-2 control-label" >Estado:</frm:label>
                     <div class="col-sm-10">
-                    <frm:input path="igvPorcent" class="form-control" />
+                    <frm:input path="estado" class="form-control" />
                     </div>
                 </div>
                 
-
-              </div>
-              <!-- /.box-body -->
-
-                        
+              <!-- /.box-body -->  
               <div class="box-footer" style="margin-left: 80px">                
                   <input type="submit" value="Guardar" class="btn btn-primary" />
                   
                   &nbsp;&nbsp;
-                  <a href="${pageContext.request.contextPath}/confiMain" class="btn btn-primary">Cancelar</a> 
+                  <a href="${pageContext.request.contextPath}/catManuMain" class="btn btn-primary">Cancelar</a> 
               </div>            
     </frm:form>
 </div>
 
 </section> 
+  
 <script type="text/javascript">
     $(function () {
        //$('#datetimepicker1').datetimepicker();
@@ -64,5 +61,4 @@
         //alert(dato2.replace('-','/'));
     });
 </script>     
-</div> 
-  
+    </div> 

@@ -20,17 +20,28 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 public class Initializer implements WebApplicationInitializer {
 
-	public void onStartup(ServletContext servletContext)
-			throws ServletException {
-		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-		ctx.register(WebAppConfig.class);
-		servletContext.addListener(new ContextLoaderListener(ctx));
+   /* public static void main(String[] args) {
+        SpringApplication.run(Initializer.class, args);
+        
+    }  */
+    
+    
+    /*protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Initializer.class);
+    }  */  
+    
+    @Override
+    public void onStartup(ServletContext servletContext)
+                    throws ServletException {
+            AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
+            ctx.register(WebAppConfig.class);
+            servletContext.addListener(new ContextLoaderListener(ctx));
 
-		ctx.setServletContext(servletContext);
+            ctx.setServletContext(servletContext);
 
-		Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));
-		servlet.addMapping("/");
-		servlet.setLoadOnStartup(1);
-	}
+            Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));
+            servlet.addMapping("/");
+            servlet.setLoadOnStartup(1);
+    }
 
 }

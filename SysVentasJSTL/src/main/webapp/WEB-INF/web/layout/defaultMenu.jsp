@@ -40,6 +40,11 @@
                     <li ><a href="${pageContext.request.contextPath}/catProMain"><i class="fa fa-circle-o"></i> Categ. Producto</a></li> 
                     <li ><a href="${pageContext.request.contextPath}/prodMain"><i class="fa fa-circle-o"></i> U. M. Productos</a></li>                   
                     <li ><a href="${pageContext.request.contextPath}/tipoclientemain"><i class="fa fa-circle-o"></i> T. Cliente Ventas</a></li>                    
+                    <li ><a href="${pageContext.request.contextPath}/ApperMain"><i class="fa fa-circle-o"></i> Apertura-Periodo</a></li>
+                    <li ><a href="${pageContext.request.contextPath}/sucMain"><i class="fa fa-circle-o"></i> Sucursal</a></li>
+                    <li ><a href="${pageContext.request.contextPath}/almMain"><i class="fa fa-circle-o"></i> Almacenamiento</a></li>                    
+                    <li ><a href="${pageContext.request.contextPath}/catManuMain"><i class="fa fa-circle-o"></i> Cat. Manufact</a></li>                    
+                    <li ><a href="${pageContext.request.contextPath}/periodoMain"><i class="fa fa-circle-o"></i> Periodo</a></li>                    
                     <li ><a href="${pageContext.request.contextPath}/pru1"><i class="fa fa-circle-o"></i> Prueba1</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pru2"><i class="fa fa-circle-o"></i> Prueba2</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pers"><i class="fa fa-circle-o"></i> Persona Main</a></li>

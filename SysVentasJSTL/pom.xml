@@ -162,8 +162,8 @@
 
 	<build>
 		<plugins>
-                    
-                        <plugin>
+                   
+<!--                        <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-compiler-plugin</artifactId>
                             <version>3.7.0</version>
@@ -181,11 +181,14 @@
                               <port>9090</port>
                               <path>/</path>
                             </configuration>                          
-                        </plugin>                     
-<!--			<plugin>
+                        </plugin>  -->
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>-->
+				<artifactId>spring-boot-maven-plugin</artifactId>				
+                                <configuration>
+                                    <mainClass>pe.com.syscenterlife.Initializer</mainClass>
+                                </configuration>                                
+			</plugin>                                                                  
 		</plugins>
 	</build>
 

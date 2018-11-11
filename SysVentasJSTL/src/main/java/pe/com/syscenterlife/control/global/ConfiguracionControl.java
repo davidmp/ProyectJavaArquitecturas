@@ -122,7 +122,7 @@ public String irModificar2Configuracion(HttpServletRequest r, Model model ){
         model.addAttribute("ListIdioma", idioma);
         
         model.addAttribute("urlAccion", "actualizarConfiguracion");             
-    return "global/configuraciion/formConfiguracion";
+    return "global/configuracion/formConfiguracion";
 }
 
 @RequestMapping(value = "actualizarConfiguracion", method = RequestMethod.POST)

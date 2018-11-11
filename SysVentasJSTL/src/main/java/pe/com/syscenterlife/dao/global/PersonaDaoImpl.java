@@ -7,11 +7,11 @@ package pe.com.syscenterlife.dao.global;
 
 import java.util.List;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import pe.com.syscenterlife.SysDataAccess;
 import pe.com.syscenterlife.modelo.GloPersonas;
 import pe.com.syscenterlife.modelo.IdGenerator;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+
 
 /**
  *

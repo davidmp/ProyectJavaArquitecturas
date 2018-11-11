@@ -33,7 +33,6 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 @Configuration
 @ComponentScan("pe.com.syscenterlife")
 @EnableWebMvc
-
 public class WebAppConfig extends WebMvcConfigurerAdapter{
  
 

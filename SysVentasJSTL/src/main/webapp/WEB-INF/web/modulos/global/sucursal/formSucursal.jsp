@@ -17,25 +17,27 @@
               <h3 class="box-title">Formulario de Registro</h3>
             </div>
     <c:url var="urlsave" value="${pageContext.request.contextPath}/${urlAccion}" />
-    <frm:form modelAttribute="modeloConfiguracion" method="post" action="${urlsave}" class="form-horizontal" >
+    <frm:form modelAttribute="modeloGloSucursal" method="post" action="${urlsave}" class="form-horizontal" >
   
             <div class="box-body">
                 <div class="form-group">
-                    <frm:hidden path="idConfiguracion" />
-                    <frm:label path="idCuentaIgv" class="col-sm-2 control-label" >Cuenta IGV.:</frm:label>
+                    <frm:hidden path="idSucursal" />
+                    <frm:label path="idEmpresa" class="col-sm-2 control-label" >idEmpresa:</frm:label>
                     <div class="col-sm-10">
-                    <frm:input path="idCuentaIgv" class="form-control" />
+                    <frm:input path="idEmpresa" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">                    
-                    <frm:label path="igvPorcent" class="col-sm-2 control-label" >Porcent. IGV:</frm:label>
+                    <frm:label path="lugar" class="col-sm-2 control-label" >Lugar:</frm:label>
                     <div class="col-sm-10">
-                    <frm:input path="igvPorcent" class="form-control" />
+                    <frm:input path="lugar" class="form-control" />
                     </div>
                 </div>
-                
-
-              </div>
+                <div class="form-group">
+                    <frm:label path="direccion" class="col-sm-2 control-label">Dirección:</frm:label>
+                    <div class="col-sm-10">
+                    <frm:input path="direccion" class="form-control"  /></div>                    
+                </div>
               <!-- /.box-body -->
 
                         
@@ -43,7 +45,7 @@
                   <input type="submit" value="Guardar" class="btn btn-primary" />
                   
                   &nbsp;&nbsp;
-                  <a href="${pageContext.request.contextPath}/confiMain" class="btn btn-primary">Cancelar</a> 
+                  <a href="${pageContext.request.contextPath}/sucMain" class="btn btn-primary">Cancelar</a> 
               </div>            
     </frm:form>
 </div>
@@ -58,7 +60,7 @@
     }); 
 
         var dato=$('#datepicker').val();
-        var dato2=dato.replace('-','/')
+        var dato2=dato.replace('-','/');
         
         $('#datepicker').val(dato2.replace('-','/'));
         //alert(dato2.replace('-','/'));
