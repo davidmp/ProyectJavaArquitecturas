@@ -45,6 +45,7 @@
                     <li ><a href="${pageContext.request.contextPath}/almMain"><i class="fa fa-circle-o"></i> Almacenamiento</a></li>                    
                     <li ><a href="${pageContext.request.contextPath}/catManuMain"><i class="fa fa-circle-o"></i> Cat. Manufact</a></li>                    
                     <li ><a href="${pageContext.request.contextPath}/periodoMain"><i class="fa fa-circle-o"></i> Periodo</a></li>                    
+                    <li ><a href="${pageContext.request.contextPath}/mainAcceso"><i class="fa fa-circle-o"></i> Acceso</a></li>                    
                     <li ><a href="${pageContext.request.contextPath}/pru1"><i class="fa fa-circle-o"></i> Prueba1</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pru2"><i class="fa fa-circle-o"></i> Prueba2</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pers"><i class="fa fa-circle-o"></i> Persona Main</a></li>
