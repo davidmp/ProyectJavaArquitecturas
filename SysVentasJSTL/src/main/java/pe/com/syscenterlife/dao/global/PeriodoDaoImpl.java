@@ -36,6 +36,13 @@ public class PeriodoDaoImpl extends SysDataAccess<Integer, GloPeriodo> implement
         }
         
         @Override
+        public List<Object> operacionIgv (double monto){
+        return (List<Object>) sessionFactory.getCurrentSession()
+                .createNativeQuery("{ CALL operacionIgv(?1)}")
+                .setParameter(1, monto).getResultList();
+        }
+        
+        @Override
         public GloPeriodo buscarEntidadId(int id){return getById(id);}
         @Override
         public void guardarEntidad(GloPeriodo periodo){savev(periodo);}

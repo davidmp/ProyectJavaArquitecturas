@@ -5,6 +5,7 @@
  */
 package pe.com.syscenterlife.control.global;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -51,6 +52,18 @@ public  ModelAndView buscarEntidad(Locale locale, Map<String,Object> model, Http
     String welcome=messageSource.getMessage("welcome.message", new Object[]{"David Mamani"}, locale);
     String dato=r.getParameter("dato");
     List<GloPeriodo> lista=periodoServicioI.listarEntidadProcedure(dato);
+    
+    double monto=Double.parseDouble(r.getParameter("monto"));
+    
+    List<Object> listOper=periodoServicioI.operacionIgv(monto);
+    
+    Iterator it=listOper.iterator();
+    while (it.hasNext()) {
+        Object[] next = (Object[])it.next();
+        logger.info("IGV : " +next[0]);
+        logger.info("Importe : " +next[1]);        
+        welcome+="IGV: "+next[0]+ "------Importe: "+next[1];
+    }    
     model.put("ListaPeriodo", lista);
     model.put("message", welcome);
     model.put("startMeeting", "09:10");    

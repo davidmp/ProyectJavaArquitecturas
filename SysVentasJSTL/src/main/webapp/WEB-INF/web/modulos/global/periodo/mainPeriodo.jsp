@@ -34,7 +34,10 @@
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">Periodo:</label>
-                <div class="col-sm-6">
+                <div class="col-sm-3">                    
+                    <input type="text" class="form-control" id="monto" name="monto" />
+                </div>                
+                <div class="col-sm-3">                    
                     <input type="text" class="form-control"  id="dato" name="dato"/>                     
                 </div>                
                 <div class="col-sm-1">

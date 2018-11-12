@@ -28,6 +28,10 @@ public class PeriodoServicioImpl implements PeriodoServicioI{
     public List<GloPeriodo> listarEntidadDato(String dato){return daoI.listarEntidadDato(dato);}
     @Override
     public List<GloPeriodo> listarEntidadProcedure(String dato){return daoI.listarEntidadProcedure(dato);}
+    
+    @Override
+    public List<Object> operacionIgv (double monto){return daoI.operacionIgv(monto);}
+    
     @Override
     public GloPeriodo buscarEntidadId(int id){return daoI.buscarEntidadId(id);}
     @Override

@@ -16,6 +16,7 @@ public interface PeriodoServicioI {
     public List<GloPeriodo> listarEntidad();
     public List<GloPeriodo> listarEntidadDato(String dato);
     public List<GloPeriodo> listarEntidadProcedure(String dato);
+    public List<Object> operacionIgv (double monto);
     public GloPeriodo buscarEntidadId(int id);
     public void guardarEntidad(GloPeriodo periodo);
     public void eliminarEntidad(int id);
