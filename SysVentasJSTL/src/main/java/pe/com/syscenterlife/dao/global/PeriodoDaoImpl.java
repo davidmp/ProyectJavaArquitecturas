@@ -30,7 +30,8 @@ public class PeriodoDaoImpl extends SysDataAccess<Integer, GloPeriodo> implement
         
         @Override
         public List<GloPeriodo> listarEntidadProcedure(String dato){
-        return (List<GloPeriodo>)sessionFactory.getCurrentSession().createNativeQuery("{ CALL getPeriodoByPeriodo(?1) }",GloPeriodo.class)
+        return (List<GloPeriodo>)sessionFactory.getCurrentSession()
+                .createNativeQuery("{ CALL getPeriodoByPeriodo(?1) }",GloPeriodo.class)
                 .setParameter(1, dato).getResultList();
         }
         

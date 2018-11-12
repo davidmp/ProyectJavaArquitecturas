@@ -32,8 +32,9 @@ public class AccesoDaoImpl extends SysDataAccess<Integer, SysAccesos> implements
                                 " FROM sys_menu m  WHERE m.idMenu=a.idMenu) nombremenu, estado, estadopri  \n" +
                                 " FROM (  SELECT a.idAccesos,a.nombre, a.url,a.idMenu,a.nro_orden, a.codigo_seg, \n" +
                                 " (CASE WHEN b.estado='1' THEN b.estado ELSE '0' END)  estado, (CASE WHEN b.idUsuario IS NULL THEN '0' ELSE '1' END) estadopri  \n" +
-                                "FROM (SELECT idAccesos,nombre, url,idMenu,nro_orden, codigo_seg FROM sys_accesos ) a LEFT JOIN ( SELECT idAccesos, idUsuario, estado FROM sys_privilegios WHERE idUsuario=?1 ) b USING(idAccesos)) a \n" +
-                                "ORDER BY (SELECT m.etiqueta  FROM sys_menu m  WHERE m.idMenu=a.idMenu) ASC, nro_orden ASC ", ViewSysAccesos.class)
+                                " FROM (SELECT idAccesos,nombre, url,idMenu,nro_orden, codigo_seg FROM sys_accesos ) a LEFT JOIN ( SELECT idAccesos, idUsuario, "+
+                                " estado FROM sys_privilegios WHERE idUsuario=?1 ) b USING(idAccesos)) a \n" +
+                                " ORDER BY (SELECT m.etiqueta  FROM sys_menu m  WHERE m.idMenu=a.idMenu) ASC, nro_orden ASC ", ViewSysAccesos.class)
                .setParameter(1, idUsuario)
                .list();           
         }catch (Exception e) { logger.info("Mensage de Error en idPersonaGenerator() "+e.getMessage());   }
