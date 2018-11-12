@@ -33,12 +33,24 @@
             <form action="${pageContext.request.contextPath}/buscarPeriodo" method="POST">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Periodo:</label>
-                <div class="col-sm-3">                    
-                    <input type="text" class="form-control" id="monto" name="monto" />
+                <label class="col-sm-1 control-label">Periodo:</label>
+                <div class="col-sm-2">                    
+                    <input type="text" class="form-control"  id="dato" name="dato"/> 
                 </div>                
-                <div class="col-sm-3">                    
-                    <input type="text" class="form-control"  id="dato" name="dato"/>                     
+                <div class="col-sm-1">Monto:                                      
+                <input type="text" class="form-control" id="monto" name="monto" />                    
+                </div>                
+                <div class="col-sm-1">Pre. Unit:                                      
+                    <input type="text" class="form-control" id="punit" name="punit" onkeyup="operar()" />                    
+                </div>                
+                <div class="col-sm-1">Cantidad:                                      
+                <input type="text" class="form-control" id="cantidad" name="cantidad" onkeyup="operar()" />                    
+                </div>                
+                <div class="col-sm-1">IGV:                                      
+                <input type="text" class="form-control" id="igv" name="igv"  />                    
+                </div>                
+                <div class="col-sm-1">Total:                                      
+                <input type="text" class="form-control" id="total" name="total" />                    
                 </div>                
                 <div class="col-sm-1">
                     <input type="submit" value="Buscar" class="btn btn-primary"/>
@@ -108,5 +120,19 @@
 //      'info'        : true,
 //      'autoWidth'   : false
 //    });
+    $('#punit').val(0);
+    $('#cantidad').val(1);
+    $('#total').val($('#punit').val()*$('#cantidad').val());
+    $('#total').prop('readonly', true);
+    $('#igv').val(0);
   });
+  
+  function operar(){
+      var dato=$('#punit').val()*$('#cantidad').val();
+      
+      $('#total').val(dato);
+      //var igvx=(($('#total').val()*18)/118); //+(Math.round((($('#total').val()*18)/118) + "e+2")  + "e-2")
+      var igvx=+(Math.round((($('#total').val()*18)/118) + "e+2")  + "e-2"); //+(Math.round((($('#total').val()*18)/118) + "e+2")  + "e-2")
+      $('#igv').val(igvx);
+  }
 </script>
