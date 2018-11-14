@@ -5,6 +5,7 @@
  */
 package pe.com.syscenterlife.modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -58,11 +59,13 @@ public class GloProductos implements Serializable {
     @Column(name = "estado")
     private int estado;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProducto")
+    @JsonIgnore
     private Collection<GloAlmacenProducto> gloAlmacenProductoCollection;
     @JoinColumn(name = "idCategoria", referencedColumnName = "idCategoria")
     @ManyToOne(optional = false)
     private GloCategoriaProducto idCategoria;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProducto")
+    @JsonIgnore
     private Collection<GloUnidadmedProducto> gloUnidadmedProductoCollection;
 
     public GloProductos() {
