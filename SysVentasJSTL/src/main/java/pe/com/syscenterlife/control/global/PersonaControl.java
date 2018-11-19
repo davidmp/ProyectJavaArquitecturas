@@ -27,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import pe.com.syscenterlife.modelo.GloPersonas;
 import pe.com.syscenterlife.servicio.global.PersonaServicioI;
+import pe.com.syscenterlife.utils.STRCrypto;
 
 
 /**
@@ -117,11 +118,12 @@ public ModelAndView irFormulario(@ModelAttribute("modeloPersona")GloPersonas per
 @RequestMapping(value = "/guardarPersona", method = RequestMethod.POST)
 public ModelAndView guardarEntidad(@ModelAttribute("modeloPersona")GloPersonas persona,
         BindingResult result, HttpServletRequest r){
-        
+        STRCrypto crypt=new STRCrypto();
         persona.setIdPersona(personaServicioI.idPersonaGenerator().getId());
+        
         logger.info("Imprimir ID: "+persona.getIdPersona());    
         try {
-       
+        persona.setClave(crypt.encrypt(persona.getClave()));
         personaServicioI.guardarEntidad(persona);
         return new ModelAndView(new RedirectView("/perMain"));
         } catch (Exception e) { 
@@ -163,7 +165,9 @@ public String irModificar2Persona(HttpServletRequest r, Model model ){
 @RequestMapping(value = "actualizarPersona", method = RequestMethod.POST)
 public ModelAndView actualizarPersona(@ModelAttribute("modeloPersona") GloPersonas entidad,
                                       BindingResult result, HttpServletRequest r ){
+        STRCrypto crypt=new STRCrypto();
         try {
+        entidad.setClave(crypt.encrypt(entidad.getClave()));
         personaServicioI.modificarEntidad(entidad);
         return new ModelAndView(new RedirectView(r.getContextPath()+"/perMain"));
     } catch (Exception e) {

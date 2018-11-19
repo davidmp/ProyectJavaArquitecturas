@@ -7,7 +7,7 @@ package pe.com.syscenterlife.dao.global;
 
 import java.util.List;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+
 import pe.com.syscenterlife.SysDataAccess;
 import pe.com.syscenterlife.modelo.GloPersonas;
 import pe.com.syscenterlife.modelo.IdGenerator;
@@ -38,6 +38,21 @@ public class PersonaDaoImpl extends SysDataAccess<Integer, GloPersonas> implemen
               
         return to;           
     }  
+    
+    @Override
+    public GloPersonas validarLogin(GloPersonas user) {
+    GloPersonas resultado=null;   
+    String usuario=user.getUsuario(); 
+    String pasword=user.getClave();
+    try {           
+       resultado= (GloPersonas) sessionFactory.getCurrentSession()
+                                .createQuery("SELECT p from GloPersonas p WHERE p.usuario=?1 and p.clave=?2")
+                                .setParameter(1, usuario)
+                                .setParameter(2, pasword).uniqueResult();                                 
+        }catch (Exception e) { logger.info("Mensage de Error en validarPersona() "+e.getMessage());   }
+        finally{ sessionFactory.close(); }            
+        return resultado;
+    }
     
     @Override
     public List<GloPersonas> listarEntidadDato(String dato){

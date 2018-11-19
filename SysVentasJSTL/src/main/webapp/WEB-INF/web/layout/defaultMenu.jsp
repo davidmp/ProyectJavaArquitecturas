@@ -45,7 +45,8 @@
                     <li ><a href="${pageContext.request.contextPath}/almMain"><i class="fa fa-circle-o"></i> Almacenamiento</a></li>                    
                     <li ><a href="${pageContext.request.contextPath}/catManuMain"><i class="fa fa-circle-o"></i> Cat. Manufact</a></li>                    
                     <li ><a href="${pageContext.request.contextPath}/periodoMain"><i class="fa fa-circle-o"></i> Periodo</a></li>                    
-                    <li ><a href="${pageContext.request.contextPath}/mainAcceso"><i class="fa fa-circle-o"></i> Acceso</a></li>                    
+                    <li ><a href="${pageContext.request.contextPath}/mainAcceso"><i class="fa fa-circle-o"></i> Acceso</a></li>
+                    
                     <li ><a href="${pageContext.request.contextPath}/pru1"><i class="fa fa-circle-o"></i> Prueba1</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pru2"><i class="fa fa-circle-o"></i> Prueba2</a></li>
                     <li ><a href="${pageContext.request.contextPath}/pers"><i class="fa fa-circle-o"></i> Persona Main</a></li>
@@ -170,6 +171,8 @@
             <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
+        
+        
         <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
@@ -179,6 +182,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+            
             <li class="treeview">
               <a href="#"><i class="fa fa-circle-o"></i> Level One
                 <span class="pull-right-container">
@@ -187,7 +191,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+<!--                <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i> Level Two
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -197,12 +202,26 @@
                     <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
                   </ul>
-                </li>
+                </li>-->
               </ul>
             </li>
+            
+            <li class="treeview">
+              <a href="#"><i class="fa fa-circle-o"></i> Level One 2
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two 2</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two 2</a></li>
+              </ul>
+            </li>
+            
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
+        
         <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>

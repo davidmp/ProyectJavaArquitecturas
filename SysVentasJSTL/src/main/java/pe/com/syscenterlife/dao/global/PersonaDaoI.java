@@ -17,6 +17,7 @@ public interface PersonaDaoI {
     public List<GloPersonas> listarEntidad();
     public List<GloPersonas> listarEntidadDato(String dato);
     public GloPersonas buscarEntidadId(int id);
+    public GloPersonas validarLogin(GloPersonas user);
     public void guardarEntidad(GloPersonas persona);
     public void eliminarEntidad(int id);
     public void modificarEntidad(GloPersonas persona);

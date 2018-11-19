@@ -22,7 +22,7 @@ public class CategoriaProDaoImpl extends SysDataAccess<Integer, GloCategoriaProd
     public List<GloCategoriaProducto> listarEntidadDato(String dato) {
        return (List<GloCategoriaProducto>)sessionFactory.getCurrentSession()
        .createQuery("SELECT cp from GloCategoriaProducto cp WHERE cp.nombre LIKE ?1")
-       .setParameter(1,"&"+ dato+"%")
+       .setParameter(1,"%"+ dato+"%")
        .list();
     }
 

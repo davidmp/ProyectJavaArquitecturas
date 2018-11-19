@@ -40,4 +40,7 @@ public class PersonaServicioImpl implements PersonaServicioI{
     
     @Override
     public IdGenerator idPersonaGenerator(){ return dao.idPersonaGenerator();  }
+    @Override
+    public GloPersonas validarLogin(GloPersonas user){ return dao.validarLogin(user);  }
+    
 }

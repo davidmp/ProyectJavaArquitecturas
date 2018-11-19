@@ -78,7 +78,8 @@
                 </put-list-attribute>                 
 		
                 <put-list-attribute name="javascripts">
-                    <add-attribute value="/resources/js/ie10-viewport-bug-workaround.js" />                   
+                    <add-attribute value="/resources/js/ie10-viewport-bug-workaround.js" />
+                    <add-attribute value="/webjars/AdminLTE/2.4.2/bower_components/jquery/dist/jquery.min.js" />                
                 </put-list-attribute>       
    </definition>  
   

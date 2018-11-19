@@ -58,10 +58,10 @@ public class CategoriaPrductoRControl {
 
 
 
-	@GetMapping(value = "catPro/dato/{age}")
-	public List<GloCategoriaProducto> findEntidadDato(@PathVariable String dato) {
+	@GetMapping(value = "/catPro/dato/{nombre}")
+	public List<GloCategoriaProducto> findEntidadDato(@PathVariable String nombre) {
 
-		List<GloCategoriaProducto> catProduct = categoriaServicioI.listarEntidadDato(dato);
+		List<GloCategoriaProducto> catProduct = categoriaServicioI.listarEntidadDato(nombre);
 		return catProduct;
 	}
 

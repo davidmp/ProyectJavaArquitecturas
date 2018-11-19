@@ -21,4 +21,5 @@ public interface PersonaServicioI {
     public void eliminarEntidad(int id);
     public void modificarEntidad(GloPersonas persona); 
     public IdGenerator idPersonaGenerator();
+    public GloPersonas validarLogin(GloPersonas user);
 }
