@@ -26,7 +26,7 @@ function validaxion(){
 		$('#username').focus();
 	}
 	if (!$("#password").val()){
-		error += "Introduce la contraseña";
+		error += "Introduce la contraseña UPEU";
 		if ($("#username").val())
 		 $('#password').focus();
 	}      
@@ -42,7 +42,7 @@ function validaxion(){
                 type: 'POST',
 		url: '${pageContext.request.contextPath}/validate',		
 		data: 'username=' + encodeURIComponent($('#username').val()) + '&password=' + encodeURIComponent($('#password').val()) + '&web=validaxion',
-		success: function(data){ 
+		success: function(data){
                     //alert(data);
                    objParameter=$.trim(data).split("|");   
 
