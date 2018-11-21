@@ -101,7 +101,7 @@ public class STRCrypto {
 			
 			System.out.println("ioteca_v2_db : "+cryp.encrypt("ioteca_v2_db?user=library&password=l1br@ry@"));
 			System.out.println(""+cryp.decrypt("tPy5lSHtiss35Q5xRwjdY2SPOwnkfsNxOk2jtqexeOOTQwBsoWBzkSHrXlnBVGc2"));
-			System.out.println(""+cryp.decrypt("BfCCIFeWaqc="));
+			System.out.println(""+cryp.decrypt("LmAJembXM+g="));
 			
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
