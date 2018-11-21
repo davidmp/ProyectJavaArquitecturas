@@ -19,5 +19,7 @@ public interface AccesoServicioI {
     public SysAccesos buscarEntidadId(int id);
     public void guardarEntidad(SysAccesos accesos);
     public void eliminarentidad(int id);
-    public void modificarEntidad(SysAccesos accesos);     
+    public void modificarEntidad(SysAccesos accesos);
+    public List<SysAccesos> listarNoombreAcceso();
+    public List<SysAccesos> listarNoombreAccesoUsuario(int idUsuario);
 }

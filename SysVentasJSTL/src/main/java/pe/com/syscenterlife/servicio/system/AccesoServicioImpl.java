@@ -37,4 +37,9 @@ public class AccesoServicioImpl implements AccesoServicioI{
     @Override
     public void modificarEntidad(SysAccesos accesos){dao.modificarEntidad(accesos);}
     
+    @Override
+    public List<SysAccesos> listarNoombreAcceso(){return dao.listarNoombreAcceso();}
+    @Override
+    public List<SysAccesos> listarNoombreAccesoUsuario(int idUsuario){return dao.listarNoombreAccesoUsuario(idUsuario);}
+    
 }

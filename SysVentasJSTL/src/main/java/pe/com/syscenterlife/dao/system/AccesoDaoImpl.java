@@ -43,6 +43,21 @@ public class AccesoDaoImpl extends SysDataAccess<Integer, SysAccesos> implements
     }
     
     @Override
+    public List<SysAccesos> listarNoombreAcceso(){
+        return (List<SysAccesos>)sessionFactory.getCurrentSession()
+                .createQuery("SELECT a from SysAccesos a ORDER BY a.idMenu.etiqueta ASC, a.nroOrden ASC ")
+                .list();
+    }
+    @Override
+    public List<SysAccesos> listarNoombreAccesoUsuario(int idUsuario){
+    return (List<SysAccesos> ) sessionFactory.getCurrentSession()
+                .createQuery("SELECT a from SysAccesos a WHERE a.idAccesos IN (SELECT p.idAccesos FROM SysPrivilegios p WHERE p.idUsuario.idUsuario=?1 and p.estado=?2 ) ORDER BY a.idMenu.etiqueta ASC, a.nroOrden ASC ")
+                .setParameter(1, idUsuario)
+                .setParameter(2, "1")
+                .list();
+    }
+    
+    @Override
     public SysAccesos buscarEntidadId(int id){return getById(id);}
     @Override
     public void guardarEntidad(SysAccesos accesos){savev(accesos);}

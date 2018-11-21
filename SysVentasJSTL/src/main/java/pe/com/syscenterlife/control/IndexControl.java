@@ -23,6 +23,7 @@ import pe.com.syscenterlife.modelo.GloPersonas;
 import pe.com.syscenterlife.modelo.GloUsuario;
 
 import pe.com.syscenterlife.servicio.global.UsuarioServicioI;
+import pe.com.syscenterlife.servicio.system.AccesoServicioI;
 import pe.com.syscenterlife.utils.STRCrypto;
 
 /**
@@ -35,6 +36,9 @@ public class IndexControl {
     private MessageSource messageSource;
     @Autowired
     UsuarioServicioI usuarioServicioI;
+    
+    @Autowired
+    AccesoServicioI accesoServicioI;
 
    @RequestMapping(value = "/locate", method = RequestMethod.GET)
     public String getLocatePage(){
@@ -64,11 +68,12 @@ public class IndexControl {
         GloUsuario list= usuarioServicioI.validarLogin(personas);
                
                if(list!=null){                                            
-                if(list.getEstado().equals("1")){
+                if(list.getEstado().equals(1) && !list.getIdPerfil().getCodigo().equals("1")){
                 int l = Integer.parseInt(list.getIdPerfil().getCodigo());
                 request.getSession().setAttribute("Username", request.getParameter("username"));
                 request.getSession().setAttribute("UserId", list.getIdUsuario());
                 request.getSession().setAttribute("NivelFsx", list.getIdPerfil().getCodigo());
+                request.getSession().setAttribute("ListaAccesosM", accesoServicioI.listarNoombreAccesoUsuario(list.getIdUsuario()));
                     if(l<=5) {
                             request.getSession().setAttribute("Session2", request.getSession().getId()); 
                             ArrayList list_s= new ArrayList();
@@ -84,11 +89,13 @@ public class IndexControl {
                       }
                     result="|5|Exito|validatex|";                
                 }else{
-                if(!list.getEstado().equals("1") && list.getIdPerfil().getCodigo().equals("1")){
+                if(list.getIdPerfil().getCodigo().equals("1")){
                         int l = Integer.parseInt(list.getIdPerfil().getCodigo());
                         request.getSession().setAttribute("Username", request.getParameter("username"));
-                        request.getSession().setAttribute("UserId", list.getIdUsuario());
+                        request.getSession().setAttribute("UserId", list.getIdUsuario());                        
                         request.getSession().setAttribute("NivelFsx", list.getIdPerfil().getCodigo());
+                        request.getSession().setAttribute("ListaAccesosM", accesoServicioI.listarNoombreAcceso());
+                        
                             if(l<=5) {
                                     request.getSession().setAttribute("Session2", request.getSession().getId()); 
                                     ArrayList list_s= new ArrayList();
